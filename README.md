@@ -1,7 +1,8 @@
 # z100-preserved
 
 ## What is this?
-I am preserving the contents of the Z100 Lifeline site. My dad used to one of these and I think he still follows the site. The owner of the site indicated issues with continuing to host the work on EarthLink. I noted that it would be possible to (easily) migrate this static site over to a Github static page and use a CNAME file to preserve the custom domain link, too.
+
+I am preserving the contents of the Z100 Lifeline site. My dad used to own one of these and I think he still follows the site. The owner of the site indicated issues with continuing to host the work on EarthLink. I noted that it would be possible to (easily) migrate this static site over to a Github static page and use a CNAME file to preserve the custom domain link, too.
 
 ## How was this repo created?
 At 5:25 PST on Wednesday, March 27, 2019 I ran the following command:
