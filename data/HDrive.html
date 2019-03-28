@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>H/Z-100 Seagate MFM Hard Drive Repair</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/tile_sidebar.jpg" VLINK="#ff00ff" LINK="#4000ff" ALINK="#4000ff" TEXT="#000000">
+
+<BASEFONT FACE="Verdana, Arial" SIZE="2">
+
+<table border=0 cellpadding=10 cellspacing=0 width=100% align=left>
+<!-- This table is for the entire document! -->
+<tr><!-- This is the first row of the table; sets top margin. -->
+<td valign="middle" align="left"></td>
+
+<td width=90% align=center>
+<!-- This <td> sets the left margin for the border. -->
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<!-- This table is the title of the page. -->
+<TR>
+<TD WIDTH=100% ALIGN=center VALIGN=middle>
+<FONT FACE="Verdana, Arial" SIZE=5>
+&nbsp;<P>
+<B>H/Z-100 Seagate MFM Hard Drive Repair<P></B></FONT>
+&nbsp;<P></TD></TR>
+</TABLE>
+<img src="../images/bar.jpg" alt="--Divider--">
+<P></td></tr>
+
+<tr><td>&nbsp;</td>
+<td align="center" valign="middle">
+<table border=0 cellpadding=10 cellspacing=0 width=100%>
+<!-- This table contains ALL the graphics and text blocks. -->
+
+<TR><TD ALIGN=left><FONT FACE="Verdana, Arial" SIZE=2>
+<B>General Notes:</B><P>
+
+-- Many, many years ago, I had run across an article in one of the computer magazines serving Heath/Zenith computer users; REMark, Sextant, or Capital HUG (CHUG), that reported that the H/Z-100 had poor regulation in its power supply and suggested adding a 47uF capacitor to the +5Vdc line of each hard drive.<P>
+
+-- This rather unalarming message has increased in importance over the last few years because of the aging hard drives being used in the H/Z-100.<P>
+
+-- The number of Seagate hard drives with no-spin problems has increased dramatically over recent years.<P>
+
+-- Many articles in various magazines have been attributing this problem to STICTION - the drive heads sticking to the very smooth, polished surface of the drive platters, which become even more polished with age/use.<P>
+
+<B>WARNING:</B><P>
+
+The following fix requires some knowledge of electronics and soldering skills!<BR>
+Try this only on otherwise unusable hard drives and <B>ONLY AT YOUR OWN RISK</B>!<P>
+
+<B>Possible Solution:</B><P>
+
+Over the last few years of experimentation, I've found that the poor power supply regulation and the stiction problem seem to be RELATED! I've now played with more than 10 drives, mostly ST-251s and ST-138's that wouldn't spin. Of these, most have been repaired by replacing the 22uf surface mounted capacitor on the +5Vdc line with 47uf electrolytic capacitors. On the two other drives, the heads were so stuck, that turning the platters by hand broke off one of the heads on each! (Now, that's STICTION!).<P>
+
+Before throwing away any old drive that doesn't want to spin any more, if you are knowledgeable with soldering and want to try to salvage your drive, try replacing this capacitor. For the +5Vdc line, I recommend a 10v or 16v, 47uF electrolytic capacitor with the two leads out the same end. If you want to also replace the +12v capacitor (I believe it improves read/write reliability), try finding a small 25v, 47uF capacitor, no bigger than 1/4" in diameter. They can be found at most electronics stores.<P>
+
+While there have been numerous models of controller boards on the ST-138 and ST-251 drives, generally the correct capacitor is easy enough to locate as they are always located next to the power supply connector. Check which colored lead is the 5Vdc line from the computer power supply (red on the Z-100) and using an ohmmeter, locate the positive lead of the nearest 22uF capacitor connected to that connector. Fold the negative lead of the capacitor back along the side of its case and solder the leads to the vacant pads of the removed capacitor. The capacitor should lay on its side against the board. The positive lead MUST go to the pad connected to the 5Vdc line, generally marked with a plus (+) sign, and the negative lead MUST go to the pad connected to ground.<P>
+
+This fix may be applicable to other computers and Seagate drives. You'll find that some other drive manufacturers already use 47uF capacitors.<P>
+
+
+--- Steve Vagts, Editor, <I>"Z-100 LifeLine"</I>
+</FONT></TD></TR>
+
+</table>
+</td></tr>
+
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<img src="../images/bar.jpg" hspace="0" vspace="0" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<A HREF="mailto:z100lifeline@earthlink.net"> <img src="../images/email.jpg" HSPACE="0" VSPACE="0" BORDER="0"></A><P><A HREF="mailto:z100lifeline@earthlink.net"><FONT FACE="Verdana, Arial" SIZE="4">z100lifeline@earthlink.net</FONT></A>
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<P>
+<table>
+<tr><td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../index.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../index.html"> HOME Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../lifeline.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../lifeline.html"> LifeLine Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../z100.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../z100.html"> Z-100 Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../repair.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../repair.html"> Repair Page</A>
+</FONT></td>
+
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td>&nbsp;</td><td align=center><center>
+<table>
+<TR><TD VALIGN="top" ALIGN="center" WIDTH="370">
+<FONT SIZE="-2">
+Copyright &copy; 2007, Steven W. Vagts<BR>
+Revised -- September 07, 2007
+</FONT></TD>
+
+</TR>
+</TABLE>
+</center>
+</td></tr>
+</table>    
+</BODY></HTML>

@@ -1,0 +1,1504 @@
+<HTML>
+<HEAD>
+<TITLE>Zenith ZVM-13x Series Color Monitors</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/tile_sidebar.jpg" VLINK="#ff00ff" LINK="#4000ff" ALINK="#4000ff" TEXT="#000000">
+
+<BASEFONT FACE="Verdana, Arial" SIZE="2">
+
+<table border=0 cellpadding=10 cellspacing=0 width=100% align=left>
+<!-- This table is for the entire document! -->
+<tr><!-- This is the first row of the table; sets top margin. -->
+<td valign="middle" align="left"></td>
+
+<td width=90% align=center>
+<!-- This <td> sets the left margin for the border. -->
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<!-- This table is just the first pix & Title of the page. -->
+<TR><TD WIDTH=50% ALIGN=center VALIGN=middle>
+&nbsp;<P>
+<FONT FACE="Verdana, Arial" SIZE=5>
+<A HREF="../images/ZVM135Fnt.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Fnt.jpg" BORDER="0" width=350></A><P>
+</TD><TD ALIGN="center">
+<H2 ALIGN=CENTER>Zenith ZVM-13x Series<BR>
+Color Monitors</H2>
+</TD></TR>
+</TABLE>
+<img src="../images/bar.jpg" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td>
+<td align="center" valign="middle">
+<table border=0 cellpadding=10 cellspacing=0 width=100%>
+<!-- This table contains ALL the graphics and text blocks. -->
+
+<TR><TD ALIGN=left><FONT FACE="Verdana, Arial" SIZE=1>
+<Center>The following article appeared in issues #120-#121 of the <I>"Z-100 LifeLine"</I>.</Center></FONT><P>
+&nbsp;<P>
+
+<CENTER><H3 ALIGN=CENTER>ZVM-13x Monitor Service Information</H3></CENTER><P>
+
+<H4 ALIGN=LEFT>General Monitor Information:</H4><P>
+
+<FONT FACE="Verdana, Arial" SIZE=1>
+<B>Note:</B> &nbsp;Zenith did not use model numbers chronologically, but rather by a unit's particular features, price range, etc. For example, the ZVM-134 was released in late 1982, while the ZVM-133 was released in the fall of 1984. The more expensive ZVM-134 did not have the IBM Intensity signal processing board that was included in the lesser expensive ZVM-133, though most other circuitry remained the same.<P>
+
+This paper will attempt to explain the differences in the ZVM-13x model series and give helpful troubleshooting and maintenance information for each. First a few general items of interest.<P>
+&nbsp;<P>
+
+
+<B>Cleaning, as recommended by the manufacturer:</B><P>
+
+<B>Screen</B> - Before cleaning the screen, turn the monitor off and give it time to cool. Then, wet a cloth in lukewarm water containing a little fabric softener or dishwashing detergent. Wring the cloth almost dry and then wipe the glass. Make sure that no drops of moisture are squeezed onto the glass. Do NOT wipe the glass dry. Let it air dry before you turn the monitor back on.<P>
+
+<B>Cabinet</B> - Use a soft cloth with a mild soap solution to clean the cabinet. Rinse the cloth with clear water before you wipe the cabinet dry. Be VERY careful to avoid getting water inside the monitor.<P>
+
+<B>Note:</B> &nbsp;These cabinets have gotten pretty grimy over the years, especially if stored for extended periods of time in garages or basements. To really clean a neglected monitor, it is best to remove the back panel (4 hex screws on all but the ZVM-134, which has 6 hex screws) and then, on all but the ZVM-134, remove the top cabinet by placing the monitor on its face on a soft towel and removing two long philips screws from the recessed holes in the bottom. Once the screws are removed, the cabinet pops apart by gently lifting the front edge away from the front faceplate. Wash and rinse the cabinet parts being careful not to get any labels wet. I've used 'Formula 409' successfully on typical greasy grime, but sometimes a scouring powder and brush are needed on really bad cabinets. With the cabinet top removed, you also have good access to the faceplate, screen and bottom for cleaning.<P>
+&nbsp;<P>
+
+
+<B>Video Problems:</B><P>
+
+If you have difficulty with the video produced by your monitor, check the following:<P>
+
+<B>The Interconnecting Cable and Connections</B> - Depending upon where you obtained your monitor, the cable may have been meant for use with another type of computer - not a Z-100! Check the cable pinout with an ohmmeter and compare it with the pinout given in the next section.<P>
+
+<B>The Computer</B> - The Z-100 normally uses negative horizontal and negative vertical synchronization signals. However, the Z-100 is capable of generating the positive signals needed by other monitors. Check that the jumpers on the video board (the board laying horizontally over the main board) for the correct settings. Check that they are also set to RGB (Color) while you are at it.<P>
+
+<B>The Color Monitor</B> - Particularly if it is a non-Zenith model. Monitors come in all varieties, especially those manufactured after the 1980's and I can't spend time here describing them all. Let's just leave it that most monitors are not RGB capable, or, if they are, may require positive sync signals instead of the negative sync signals normally available from the Z-100.<P>
+
+<B>Hint:</B> If the monitor has a display, but it is tearing horizontally or rolling vertically, you probably have a synchronization problem. Suspect the cabling, unless the monitor has worked for you in the past.<P>
+
+To determine which component is at fault, always recheck the obvious first:<P>
+
+1. &nbsp;Check the AC power source for the monitor and the computer to be sure both are on and connected.<P>
+
+2. &nbsp;Try moving the cable and connectors back and forth to check if there is an intermittent connection.<P>
+
+3. &nbsp;If another computer, cable, or monitor is available, try a substitution of one for the other.<P>
+
+4. &nbsp;Call or write me, Steve Vagts at 211 Sean Way, Hendersonville, NC  28792, (828) 685-8924, or email me at <u>z100lifeline@earthlink.net</u> with a description of the problem and symptoms. I'll be happy to help you.<P>
+
+5. &nbsp;For the most part, all the monitors in the ZVM-13x series use the same Main Board, and nearly all the tuning adjustments are made to this board. See the separate section on the "ZVM-13x Series Main Board Adjustments" toward the end of this document.<P>
+&nbsp;<P>
+
+
+<H4 ALIGN=LEFT>Cable Descriptions:</H4><P>
+
+There were several different cables available from Zenith to cover all the possible combinations of monitors and computers that were available in the 1980's. These were:<P>
+
+
+<B>ZVM-134-1:</B>	&nbsp;Terminated with a 9-pin DB connector for the computer and a 15-pin DB connector for the monitor, this cable was used with the Z-100 and Z-150 microcomputers to connect to the ZVM-134 color monitor. There was no Intensity signal.<P>
+
+
+<B>Signal Definitions:</B><BR>
+<B>-------------------</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="80%">
+<!-- This table is for the cable Signal Definitions. -->
+<TR><TD WIDTH=20>&nbsp;
+<TH ALIGN=LEFT><FONT SIZE=1>DB-9 &nbsp;<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>&nbsp;<BR>SIGNAL:</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>DB-15<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>&nbsp;<BR>SIGNAL:</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>1</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>1</FONT>
+<TD><FONT SIZE=1>Negative Horiz Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>2</FONT>
+<TD><FONT SIZE=1>Ground</FONT>
+<TD><FONT SIZE=1>2</FONT>
+<TD><FONT SIZE=1>Positive Horiz Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>3</FONT>
+<TD><FONT SIZE=1>Red</FONT>
+<TD><FONT SIZE=1>3</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>4</FONT>
+<TD><FONT SIZE=1>Green</FONT>
+<TD><FONT SIZE=1>4</FONT>
+<TD><FONT SIZE=1>Positive Vert Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>5</FONT>
+<TD><FONT SIZE=1>Blue</FONT>
+<TD><FONT SIZE=1>5</FONT>
+<TD><FONT SIZE=1>Green Input</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>6</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>6</FONT>
+<TD><FONT SIZE=1>Blue Input</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>7</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>7</FONT>
+<TD><FONT SIZE=1>Red Input</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>8</FONT>
+<TD><FONT SIZE=1>Neg or Pos Horiz Sync</FONT>
+<TD><FONT SIZE=1>8</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>9</FONT>
+<TD><FONT SIZE=1>Neg or Pos Vert Sync</FONT>
+<TD><FONT SIZE=1>9</FONT>
+<TD><FONT SIZE=1>Negative Vert Sync*</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>10</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>11</FONT>
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>12-15</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;
+</TABLE>
+
+<B>Note *:</B> &nbsp;Composite sync can be used, but negative composite sync must be applied to both pins 1 and 9, or positive composite sync must be applied to both pins 2 and 4. This will require a modified cable.<P>
+
+<B>ZVM-134-1 Pin Layout:</B> &nbsp;Click to enlarge; Right-click to save.<BR>
+
+<A HREF="../images/ZVM-134-1.jpg" target="_blank">
+<IMG SRC="../images/ZVM-134-1.jpg" BORDER="0" WIDTH=40%></A><P>
+&nbsp;<P>
+
+
+<B>ZVM-134-2:</B>	&nbsp;Terminated with a 9-pin DB connector for the computer and a 15-pin DB connector for the monitor, this cable was used with the IBM-PC microcomputers to connect to the ZVM-134 color monitor. There was, however, no Intensity signal.<P>
+
+<B>Signal Definitions:</B> &nbsp;The same as for the previous ZVM-134-1 cable.<P>
+
+<B>ZVM-134-2 Pin Layout:</B> &nbsp;Click to enlarge; Right-click to save.<BR>
+
+<A HREF="../images/ZVM-134-2.jpg" target="_blank">
+<IMG SRC="../images/ZVM-134-2.jpg" BORDER="0" WIDTH=40%></A><P>
+
+<B>Note:</B> &nbsp;For those that want to upgrade their ZVM-134 monitor to display 16 colors (that is, install an Intensity Signal), such a modification was described in the November-December 1986 edition of <I>"Sextant"</I>. This modification, however, did require a RGB Gain Control Board, Zenith part number 9-356, which is no longer available, but may be found in a spare ZVM-133, or maybe the ZVM-136.<P>
+&nbsp;<P>
+
+
+<B>ZVM-134-3:</B>	&nbsp;Terminated with two 15-pin DB connectors, this cable was used with the Apple computer to connect with the ZVM-134 color monitor. Unfortunately, I have no information on the signal definitions, nor the pin layout.<P>
+&nbsp;<P>
+
+
+<B>ZVM-135-1:</B>	&nbsp;Terminated with a 9-pin DB connector for the computer and a 25-pin DB connector for the monitor, this cable was used with the Z-100 and Z-150 microcomputers to connect to the ZVM-131, ZVM-133, ZVM-135, and ZVM-136 color monitors. However, using this cable with the Z-150 or the IBM-PC would only allow 8 colors to be reproduced on your color monitor because there was no Intensity Signal produced. Also, when used with a Z-150, the Video Board had to be properly configured to provide the correct Sync Signals.<P>
+
+<B>Signal Definitions:</B><BR>
+<B>-------------------</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="80%">
+<!-- This table is for the cable Signal Definitions. -->
+<TR><TD WIDTH=20>&nbsp;
+<TH ALIGN=LEFT><FONT SIZE=1>DB-9 &nbsp;<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>&nbsp;<BR>SIGNAL:</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>DB-25<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>&nbsp;<BR>SIGNAL:</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>1</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>1</FONT>
+<TD><FONT SIZE=1>Negative Horiz Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>2</FONT>
+<TD><FONT SIZE=1>Ground</FONT>
+<TD><FONT SIZE=1>2</FONT>
+<TD><FONT SIZE=1>Positive Horiz Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>3</FONT>
+<TD><FONT SIZE=1>Red</FONT>
+<TD><FONT SIZE=1>3</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>4</FONT>
+<TD><FONT SIZE=1>Green</FONT>
+<TD><FONT SIZE=1>4</FONT>
+<TD><FONT SIZE=1>Positive Vert Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>5</FONT>
+<TD><FONT SIZE=1>Blue</FONT>
+<TD><FONT SIZE=1>5</FONT>
+<TD><FONT SIZE=1>Green Input</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>6</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>6</FONT>
+<TD><FONT SIZE=1>Blue Input</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>7</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>7</FONT>
+<TD><FONT SIZE=1>Red Input</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>8</FONT>
+<TD><FONT SIZE=1>Neg or Pos Horiz Sync</FONT>
+<TD><FONT SIZE=1>8</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>9</FONT>
+<TD><FONT SIZE=1>Neg or Pos Vert Sync</FONT>
+<TD><FONT SIZE=1>9</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>10</FONT>
+<TD><FONT SIZE=1>Green Feedthrough?</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>11</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Apple X1 Input</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>12</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Apple X2 Input</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>13</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Apple X3 Input</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>14</FONT>
+<TD><FONT SIZE=1>Negative Vert Sync*</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>15</FONT>
+<TD><FONT SIZE=1>IBM Intensity Input</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>16</FONT>
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>17</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>18</FONT>
+<TD><FONT SIZE=1>Audio Input</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>19</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Apple Ground</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>20</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Apple Composite Video Input</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>21</FONT>
+<TD><FONT SIZE=1>Red Feedthrough?</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>22</FONT>
+<TD><FONT SIZE=1>Blue Feedthrough?</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>23-24</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>25</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Apple X8 Input</FONT>
+<TR><TD>&nbsp;<BR></TD></TR>
+</TABLE>
+
+<B>Notes:</B><BR>
+&nbsp; &nbsp;* &nbsp;
+Composite sync may be applied here, but it must be supplied to both the horizontal<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;
+and the vertical sync inputs.<BR>
+&nbsp; &nbsp; ? &nbsp;
+I don't know what these feedthrough signals are about.<P>
+
+<B>ZVM-135-1 Pin Layout:</B> &nbsp;Click to enlarge; Right-click to save.<P>
+
+<A HREF="../images/ZVM-135-1.jpg" target="_blank">
+<IMG SRC="../images/ZVM-135-1.jpg" BORDER="0" WIDTH=40%></A><P>
+&nbsp;<P>
+
+
+<B>ZVM-135-2:</B>	&nbsp;Terminated with a 9-pin DB connector for the computer and a 25-pin DB connector for the monitor, this cable was used with the Z-150 computer and the IBM-PC to connect with the ZVM-131, ZVM-133, ZVM-135, and ZVM-136 color monitors. The Z-150 video board came configured for use with this cable.<P>
+
+<B>Signal Definitions:</B> &nbsp;The same as for the previous ZVM-135-1 cable.<P>
+
+<B>ZVM-135-2 Pin Layout:</B> &nbsp;Click to enlarge; Right-click to save.<P>
+
+<A HREF="../images/ZVM-135-2.jpg" target="_blank">
+<IMG SRC="../images/ZVM-135-2.jpg" BORDER="0" WIDTH=40%></A><P>
+&nbsp;<P>
+
+
+<B>ZVM-135-3:</B>	&nbsp;Terminated with a 15-pin DB connector for the Apple III computer and a 25-pin DB connector for the monitor, this cable was used with the Apple III computer to connect with the ZVM-131, ZVM-133, ZVM-135 and ZVM-136 color monitors.<P>
+
+<B>Signal Definitions:</B><BR>
+<B>-------------------</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="80%">
+<!-- This table is for the cable Signal Definitions. -->
+<TR><TD WIDTH=20>&nbsp;
+<TH ALIGN=LEFT><FONT SIZE=1>DB-15&nbsp;<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>(Apple)<BR>SIGNAL:</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>DB-15&nbsp;<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>(Monitor)<BR>SIGNAL:</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>1</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>1 & 14</FONT>
+<TD><FONT SIZE=1>Apple Negative Sync*</FONT>
+<TR><TD>&nbsp;<TD><FONT SIZE=1>2</FONT>
+<TD><FONT SIZE=1>Apple X3 Out</FONT>
+<TD><FONT SIZE=1>2-10</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Not used by Apple</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>3</FONT>
+<TD><FONT SIZE=1>Apple Negative Sync</FONT>
+<TD><FONT SIZE=1>11</FONT>
+<TD><FONT SIZE=1>Apple X1 Input</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>4</FONT>
+<TD><FONT SIZE=1>Apple X2 Out</FONT>
+<TD><FONT SIZE=1>12</FONT>
+<TD><FONT SIZE=1>Apple X2 Input</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>5</FONT>
+<TD><FONT SIZE=1>Apple X1 Out</FONT>
+<TD><FONT SIZE=1>13</FONT>
+<TD><FONT SIZE=1>Apple X3 Input</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>6</FONT>
+<TD><FONT SIZE=1>Ground</FONT>
+<TD><FONT SIZE=1>14-18</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Not used by Apple</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>7-9</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>19</FONT>
+<TD><FONT SIZE=1>Apple Ground, also connect to shield</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>10</FONT>
+<TD><FONT SIZE=1>Apple X8 Out</FONT>
+<TD><FONT SIZE=1>20</FONT>
+<TD><FONT SIZE=1>Apple Composite Video Input</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>11-15</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD><FONT SIZE=1>21-24</FONT>
+<TD><FONT SIZE=1>&nbsp; &nbsp; Not used by Apple</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;<TD>&nbsp;
+<TD><FONT SIZE=1>25</FONT>
+<TD><FONT SIZE=1>Apple X8 Input</FONT>
+<TR><TD>&nbsp;<BR></TD></TR>
+</TABLE>
+
+<B>Note:</B> &nbsp;Composite sync must be supplied to both horizontal and vertical sync inputs.<P>
+
+<B>ZVM-135-3 Pin Layout:</B> &nbsp;Click to enlarge; Right-click to save.<P>
+
+<A HREF="../images/ZVM-135-3.jpg" target="_blank">
+<IMG SRC="../images/ZVM-135-3.jpg" BORDER="0" WIDTH=40%></A><P>
+
+<B>Note:</B> &nbsp;In the ZVM-135-3's DB-25 connector, the shield is tied to pin 19, ground, and pin 1 is connected to pin 14.<P>
+&nbsp;<P>
+
+
+<B>ZVM-135-4:</B> &nbsp;This cable was approximately 3' long and was constructed using twin coax cable, 50 ohm R6-174 foil tin wire. On one end, a "Switch Craft" #05GM5M connector was used. The other cable end was split to two connectors, one being a "Switch Craft" #755 and the other an "Accurate Electric" #A-10033-2. This cable was used with the Apple II, Atari 400, 800, Commodore VIC 20, VIC 64 and TI-99/4 computers to reportedly connect to the ZVM-131 and ZVM-135 color monitors. As there is no way that this cable could be confused with the others, it is beyond the scope of this paper.<P>
+
+<B>ZVM-135-4 Pin Layout:</B> Click to enlarge; Right-click to save.<P>
+
+<A HREF="../images/ZVM-135-4.jpg" target="_blank">
+<IMG SRC="../images/ZVM-135-4.jpg" BORDER="0" WIDTH=50%></A><P>
+&nbsp;<P>
+
+
+<B>ZVM-135-5:</B> This cable was approximately 3' long and was constructed with a DB-25 connector at one end and a rectangular 18-pin connector at the other. It was used with the IBM-PC Jr. Again, as there is no way that this cable could be confused with the others, it is beyond the scope of this paper.<P>
+
+<B>ZVM-135-5 Pin Layout:</B> Click to enlarge; Right-click to save.<P>
+
+<A HREF="../images/ZVM-135-5a.jpg" target="_blank">
+<IMG SRC="../images/ZVM-135-5a.jpg" BORDER="0" WIDTH=50%></A>
+<A HREF="../images/ZVM-135-5b.jpg" target="_blank">
+<IMG SRC="../images/ZVM-135-5b.jpg" BORDER="0" WIDTH=40%></A><P>
+&nbsp;<P>
+
+
+<H4 ALIGN=LEFT>Specific Monitor Information:</H4><P>
+
+<H5>ZVM-130 Color Video Monitor:</H5><P>
+
+<B>Description:</B> &nbsp;The ZVM-130 was a medium resolution color monitor with a 40-character display in a compact monitor-style housing similar to all the monitors in this series except the ZVM-134, which looked more like a small television. I have no further information on the ZVM-130.<P>
+&nbsp;<P>
+
+<H5>ZVM-131 Color Video Monitor:</H5><P>
+<A HREF="../images/ZVM135Fnt.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Fntx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM135Bck.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Bckx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM135Fnta.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Fntax.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM135Bcka.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Bckax.jpg" BORDER="0"></A><BR>
+<FONT SIZE=1><I>Pictures courtesy of Richard L. Pestinger of Fairfield, Ohio.</I></FONT><P>
+
+<B>Note:</B> &nbsp;These pictures are of the ZVM-135, but the ZVM-131 looks the same.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Click to enlarge; Right-click to save.<P>
+
+<B>Description:</B> &nbsp;The ZVM-131 was a medium resolution color monitor with a 40-character display in a compact monitor-style housing similar to all the monitors in this series except the ZVM-134, which looked more like a small television.<P>
+
+The ZVM-131 was introduced in the fall of 1983, about the same time as the look-alike ZVM-135, a high resolution monitor, described later. This 13" monitor included a Green / White switch, composite video, RGB inputs, automatic light sensor, noise reduction circuitry, and a speaker, making it usable with video disc systems as well as computers.<P>
+
+For a description of the controls, connections, and circuit boards, see the ZVM-135 description.<P>
+
+<B>ZVM-131 Specifications:</B><P>
+
+<B>Inputs:</B> (via a DB-25 type connector)<BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="80%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>R, G, B signals</FONT>
+<TD><FONT SIZE=1> - TTL-level digital positive, analog 5v maximum input</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Composite Video</FONT>
+<TD><FONT SIZE=1> - NTSC 1v unterminated, 75 ohm terminated</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Horizontal Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative, 1-5v</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Vertical Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative, 1-5v</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>CRT:</B></FONT>
+<TD><FONT SIZE=1>13-inch, medium resolution color display</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Cables:</B><BR>
+&nbsp; &nbsp; ZVM-135-1 for the Z-100<BR>
+&nbsp; &nbsp; ZVM-135-2 for the IBM-PC<BR>
+&nbsp; &nbsp; ZVM-135-3 for the Apple<P>
+
+<B>Capacity:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>RGB:</FONT>
+<TD><FONT SIZE=1>25 lines of 40 characters each</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Pixel Resolution</FONT>
+<TD><FONT SIZE=1>390 dots</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Bandwidth:</FONT>
+<TD><FONT SIZE=1>6 MHz</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Rise Time:</FONT>
+<TD><FONT SIZE=1>70 nanoseconds</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Composite Video:</FONT>
+<TD><FONT SIZE=1>25 lines of 40 characters each</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Pixel Resolution</FONT>
+<TD><FONT SIZE=1>250 dots</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Bandwidth:</FONT>
+<TD><FONT SIZE=1>2.5 MHz</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Rise Time:</FONT>
+<TD><FONT SIZE=1>100 nanoseconds</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Video Resolution:</B><BR>
+&nbsp; &nbsp; 390 horizontal pixels x 240 lines non-interlaced<BR>
+&nbsp; &nbsp; 390 horizontal pixels x 480 lines interlaced<P>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Weight:</B></FONT>
+<TD><FONT SIZE=1>38 pounds</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Operating Voltage:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1>&nbsp; &nbsp; Standard Units:</FONT>
+<TD><FONT SIZE=1>105-130 Vac, 60 Hertz</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Power Dissipation:</B></FONT>
+<TD><FONT SIZE=1>95 Watts at 120 Vac</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+
+<H5>ZVM-133, ZVM-133T, and ZVM-133E RGB-only Color Video Monitor:</H5><P>
+<A HREF="../images/ZVM133Fnt.jpg" target="_blank">
+<IMG SRC="../images/ZVM133Fntx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM133Bck.jpg" target="_blank">
+<IMG SRC="../images/ZVM133Bckx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM133Fnta.jpg" target="_blank">
+<IMG SRC="../images/ZVM133Fntax.jpg" BORDER="0"></A><BR>
+<FONT SIZE=1><I>Pictures courtesy of Richard L. Pestinger of Fairfield, Ohio.</I></FONT><P>
+
+<B>Note:</B> &nbsp;Click to enlarge; Right-click to save.<P>
+
+<B>Description:</B> &nbsp;Introduced in late 1984, this high-resolution monitor can display digital RGB color video signals with intensity input. (The RGB refers to the red, green and blue signals needed to produce color.) In addition, this unit can provide its clear visual presentation in monochrome (Green) as well as color. The RGB signals connect directly to the color monitor, usually providing a better display than other monitors that use RF-modulated signals, such as a television set. A quality color picture is assured by the automatic color processing circuits that have been designed into the set. the vertical and horizontal portions of the display are held rock steady by specialized circuits so that the customary hold controls (horizontal and vertical) are not needed.<P>
+
+<B>NOTE:</B> &nbsp;The ZVM-133T monitor uses a huge, separate module that processes all the RGB signals and is attached to the neck of the picture tube. The main board, normally the same as the other computers in the ZVM-13x series, has some circuitry/parts missing. The picture tube is also surrounded by heavy guage metal shielding, perhaps indicating it was meant to be used in sensitive or classified areas, such as military installations. Between the huge module mounted on the CRT and all the surrounding, additional shielding, this ZVM-133T model is nearly impossible to work on, tune, or repair.<P>
+
+<B>Front Controls:</B> &nbsp;This monitor has three controls on the front panel, and a power light:<P>
+
+&nbsp; &nbsp; Push On/Off -- Push in to turn on/off.<P>
+
+&nbsp; &nbsp; Brightness -- Adjusts the brightness of the display.<P>
+
+&nbsp; &nbsp; Contrast & Green/White switch (behind a small hatch) -- Turn to adjust contrast; push in for green;<BR>
+&nbsp; &nbsp; pull out for white. The Green position may be best on the eyes for a text-only display; use White for<BR>
+&nbsp; &nbsp; a full-color display.<P>
+
+&nbsp; &nbsp; Power Light -- Indicates when the power is on.<P>
+
+<B>Rear Controls:</B> &nbsp;There is a focus control accessible through a hole in the rear panel. It is preset at the factory but with age may need adjustment. Use a long thin screwdriver through the port in the rear panel and twist left or right until the light pixels in the display are as clear as possible.<P>
+
+
+<B>ZVM-133 Specifications:</B><P>
+
+<B>Inputs:</B> (via a DB-25 type connector)<BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>R, G, B signals</FONT>
+<TD><FONT SIZE=1> - TTL-level digital positive</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Horizontal Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Vertical Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>IBM Intensity</FONT>
+<TD><FONT SIZE=1> - TTL positive</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>CRT:</B><BR>
+&nbsp; &nbsp; 13-inch, .41 mm pitch stripe<BR>
+&nbsp; &nbsp; Internal magnetic shield<BR>
+&nbsp; &nbsp; Negative matrix, p22 pigmented phosphor<BR>
+&nbsp; &nbsp; .7 mm maximum convergence error<BR>
+&nbsp; &nbsp; Sealed system tube, yoke, beam bender<P>
+
+<B>Cables:</B><BR>
+&nbsp; &nbsp; ZVM-135-1 for the Z-100<BR>
+&nbsp; &nbsp; ZVM-135-2 for the IBM-PC<BR>
+&nbsp; &nbsp; ZVM-135-3 for the Apple<P>
+
+<B>Operating Voltage:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1>&nbsp; &nbsp; Standard Units:</FONT>
+<TD><FONT SIZE=1>105-130 Vac, 60 Hertz</FONT>
+<TR><TD><FONT SIZE=1>&nbsp; &nbsp; "E" Version:</FONT>
+<TD><FONT SIZE=1>210-240 Vac, 50 Hertz</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Power Dissipation:</B></FONT>
+<TD><FONT SIZE=1>60 Watts</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+
+<H5>ZVM-134, ZVM-134E Color Video Monitor:</H5><P>
+
+<A HREF="../images/ZVM134Fnt.jpg" target="_blank">
+<IMG SRC="../images/ZVM134Fntx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM134Bck.jpg" target="_blank">
+<IMG SRC="../images/ZVM134Bckx.jpg" BORDER="0"></A><BR>
+<FONT SIZE=1><I>Pictures courtesy of Richard L. Pestinger of Fairfield, Ohio.</I></FONT><P>
+
+<B>Description:</B> &nbsp;The ZVM-134 is a high resolution Color Monitor which accepts direct RGB video inputs, displays twenty-five 80-character lines, has 20 MHz bandwidth and 20 ns rise time, and uses modular chassis design for ease of service.<P>
+
+<B>Note:</B> &nbsp;The exterior configuration of this monitor is completely different from the other Zenith monitors of the ZVM-13x series, with an outside appearance that looks more like a small color television than a monitor. Nonetheless, the inside circuit boards are similar to the other monitors in this series.<P>
+
+This monitor can display digital RGB color video signals (without intensity input). (The RGB refers to the red, green and blue signals needed to produce color.) In addition, this unit can provide its clear visual presentation in monochrome (Green) as well as color. The RGB signals connect directly to the color monitor, usually providing a better display than other monitors that use RF-modulated signals, such as a television set. A high quality color picture is assured by the automatic color processing circuits that have been designed into the set. the vertical and horizontal portions of the display are held rock steady by specialized circuits so that the customary hold controls (horizontal and vertical) are not needed.<P>
+
+<B>Front Controls:</B> &nbsp;This monitor has only one control on the front panel, a rotate to turn On/Off switch on the right side of the CRT.<P>
+
+<B>Rear Controls:</B> &nbsp;A Green/White slide switch is located next to the video connector in a recess at the top of the rear panel. The Green position may be best on the eyes for a text-only display; use White for a full-color display.<P>
+
+<B>ZVM-134 Specifications:</B><P>
+
+<B>Inputs:</B> (via a DB-15 type connector)<BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>R, G, B signals</FONT>
+<TD><FONT SIZE=1> - TTL-level digital positive (Analog, 0-5v)</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Composite</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative (Analog, 1-5v)</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Horizontal Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative (Analog, 1-5v)</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Vertical Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative (Analog, 1-5v)</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>No IBM Intensity is used</FONT>
+<TD><FONT SIZE=1>&nbsp;</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>CRT:</B><BR>
+&nbsp; &nbsp; 13-inch, 90 degree, .43 mm fine pitch dot mask<BR>
+&nbsp; &nbsp; Internal magnetic shield<BR>
+&nbsp; &nbsp; 26 Kv at 0 beam, 450 uA maximum beam current, 100 volt cutoff<BR>
+&nbsp; &nbsp; .7 mm maximum convergence error<BR>
+&nbsp; &nbsp; Sealed system tube, yoke, beam bender<P>
+
+<B>Cables:</B><BR>
+&nbsp; &nbsp; ZVM-134-1 for the Z-100 (Has 15-pin connector)<BR>
+&nbsp; &nbsp; ZVM-134-2 for the IBM-PC<BR>
+&nbsp; &nbsp; ZVM-134-3 for the Apple<P>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Pixel Display:</B></FONT>
+<TD><FONT SIZE=1>640 x 250</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Weight:</B></FONT>
+<TD><FONT SIZE=1>About 38 pounds</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Operating Voltage:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER=0 WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1>&nbsp; &nbsp; Standard Units:</FONT>
+<TD><FONT SIZE=1>105-130 Vac, 60 Hertz</FONT>
+<TR><TD><FONT SIZE=1>&nbsp; &nbsp; "E" Version:</FONT>
+<TD><FONT SIZE=1>210-240 Vac, 50 Hertz</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Operating Current:</B></FONT>
+<TD><FONT SIZE=1>.87 Amps maximum</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Fuse Protection:</B></FONT>
+<TD><FONT SIZE=1>4 Amp, type FX3201</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Power Dissipation:</B></FONT>
+<TD><FONT SIZE=1>69 Watts</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Nominal High Voltage:</B></FONT>
+<TD><FONT SIZE=1>33 kV</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+
+<H5>ZVM-135 Color Video Monitor:</H5><P>
+
+<A HREF="../images/ZVM135Fnt.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Fntx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM135Bck.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Bckx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM135Fnta.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Fntax.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM135Bcka.jpg" target="_blank">
+<IMG SRC="../images/ZVM135Bckax.jpg" BORDER="0"></A><BR>
+<FONT SIZE=1><I>Pictures courtesy of Richard L. Pestinger of Fairfield, Ohio.</I></FONT><P>
+
+<B>Description:</B> &nbsp;The ZVM-135 was introduced in the fall of 1983 as a high resolution color monitor with a 80-character display in a compact monitor-style housing similar to all the monitors in this series except the ZVM-134. It was introduced about the same time as the look-alike ZVM-131, a medium resolution monitor, described earlier. This 13" monitor included a Green / White switch, composite video, RGB inputs, automatic light sensor, noise reduction circuitry, and a speaker, making it usable with video disc systems as well as computers.<P>
+
+This model seems to have been the most popular. It worked well and accepted signal inputs from nearly anything. It has a nice clean layout inside that enables easy access for repair and tuning.<P>
+
+<B>Front Controls:</B> &nbsp;This monitor has seven control knobs on the front panel, a brightness potentiometer, a light sensor, and a power light:<P>
+
+&nbsp; &nbsp; Push On/Off -- Push in to turn on/off.<P>
+
+&nbsp; &nbsp; Volume -- Adjusts the volume of an audio signal applied to the AUDIO IN connector.<P>
+
+&nbsp; &nbsp; Display Drive -- Adjusts the brightness of the display. If you set this control fully clockwise, then<BR>
+&nbsp; &nbsp; the light sensor will not change the brightness level.<P>
+
+&nbsp; &nbsp; Black Level -- Adjusts the blackness of the display's black areas. Once set, the contrast regulator,<BR>
+&nbsp; &nbsp; an electronic circuit, automatically maintains this preset black level. After the Black Level contol<BR>
+&nbsp; &nbsp; is set, you should use the Display Drive control to make any further brightness adjustments. However,<BR>
+&nbsp; &nbsp; if the dark areas, colors, or both, appear faded or washed out, turn the Black Level control slightly<BR>
+&nbsp; &nbsp; counterclockwise. If light backgrounds and colors appear too dark, turn it clockwise.<P>
+
+&nbsp; &nbsp; Color Level* -- Sets the intensity of the colors. If turned too far counterclockwise, colors appear<BR>
+&nbsp; &nbsp; faded or weak. If turned too far clockwise, colors appear vivid or intense. This control is inoperative<BR>
+&nbsp; &nbsp; if using composite video.<P>
+
+&nbsp; &nbsp; Tint* -- Adjusts the tint of the colors; counterclockwise more purple, clockwise more green.<BR>
+&nbsp; &nbsp; This control is inoperative if using composite video.<P>
+
+&nbsp; &nbsp; Sharpness* -- Adjusts the sharpness (or softness) of the display when rotated. Pull the control<BR>
+&nbsp; &nbsp; out to activate the noise processing circuits or push in to deactivate these circuits.<P>
+
+&nbsp; &nbsp; Power Light -- Indicates when the power is on.<P>
+
+&nbsp; &nbsp; Light Sensor -- Senses the room lighting and adjusts the display brightness accordingly.<BR>
+&nbsp; &nbsp; To disable, turn the Display Drive control fully clockwise.<P>
+
+&nbsp; &nbsp; BR -- A hole for access to a factory set calibration brightness control.<P>
+
+<B>Note:</B> &nbsp;The controls marked with an asterisk (*) only affect the display when the RGB/COMP switch
+is in the COMP position.<P>
+
+<B>Rear Controls:</B><P>
+
+&nbsp; &nbsp; Focus Control - There is a focus control accessible through a hole in the rear panel. It is preset at<BR>
+&nbsp; &nbsp; the factory but with age may need adjustment. Use a long thin screwdriver through the port in the rear<BR>
+&nbsp; &nbsp; panel and twist left or right until the display is as clear as possible.<P>
+
+&nbsp; &nbsp; Green/White switch -- Push in for green; pull out for white. The Green position may be best on the eyes<BR>
+&nbsp; &nbsp; for a text-only display; use White for a full-color display.<P>
+
+&nbsp; &nbsp; RGB/COMP switch -- Selects either the RGB signals or the Composite signals, if connected, to be displayed.<P>
+
+<B>Rear Connections:</B><P>
+
+&nbsp; &nbsp; VIDEO HI-Z -- Connection for Video Monitor or Recorder, via phono jack.<P>
+
+&nbsp; &nbsp; VIDEO 75 OHM -- Composite connection to the computer if RGB is not being used.<P>
+
+&nbsp; &nbsp; AUDIO OUT -- Connection to Audio Amplifier or Recorder.<P>
+
+&nbsp; &nbsp; AUDIO IN -- Connection from computer or other audio source.<P>
+
+&nbsp; &nbsp; RGB IN, DB-25 Connector -- For RGB cable from computer.<P>
+
+<B>Notes:</B><BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Connect the video cable coming from the computer to the RGB IN connector if you will be using<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+RGB signals. Or connect a cable from the Composite Output on the rear of the Z-100 to one of<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+the other video connectors (VIDEO 75 OHM or VIDEO HI-Z) if you will be using composite signals.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+For composite video, first use the VIDEO 75 OHM connector. If the screen is not bright enough,<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+use the VIDEO HI-Z connector.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+If the computer has an audio output (from a game accessory card, etc.), connect its audio cable<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+to the AUDIO IN connector.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+If you intend to monitor or record the audio or video signals, connect the appropriate cables<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+to the AUDIO OUT connector, the VIDEO HI-Z connector, or both.<P>
+
+<B>Circuit Boards:</B> &nbsp;Most circuit boards are the same throughout the ZVM-13x series with the exception that the ZVM-131 and ZVM-135 have an additional Video/Audio Sync Board. The Video/Audio Sync Board accepts composite video, RGB, audio, and sync signals, processes them and feeds them to the main board.<P>
+
+Horizontal and vertical sync are fed from pins 1, 2, and 14 of the DB-25 connector, located on the back panel, to the sync circuitry and then to connector D on the main board. Audio input is from pin 18 of the DB-25 connector and from the audio input jack to connector 9E4. From there, all audio is processed through IC 1451. Volume for all audio is controlled by the Volume Control located on the front panel. Composite signals input from pin 20 of the DB-25 connector and from the video input jack go to connector 9F2. The signal is then fed to the sync processor IC 1301, pin 14.<P>
+
+This module will accept RGB inputs in various forms. It will accept the Apple 4-bit matrix, IBM intensity function, and also straight RGB as received from the Z-100.<P>
+
+<B>Note:</B> &nbsp;The ZVM-13x series of monitors all have similar circuitry, except for this additional Video/Audio Sync Board. Therefore, we can bypass the Audio/Video Sync Module altogether and can feed RGB signals directly into the RGB Main Module (Z-100 use only). To do this, please see the section entitled, "Bypassing the Video/Audio Sync Module", addressed later.<P>
+
+<B>ZVM-135 Specifications:</B><P>
+
+<B>Inputs:</B> (via a DB-25 type connector)<BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="80%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>R, G, B signals</FONT>
+<TD><FONT SIZE=1> - TTL-level digital positive, analog 5v maximum input</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Composite Video</FONT>
+<TD><FONT SIZE=1> - NTSC 1v unterminated, 75 ohm terminated</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Horizontal Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative, 1-5v</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Vertical Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative, 1-5v</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>IBM Intensity</FONT>
+<TD><FONT SIZE=1> - TTL-level positive</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="80%">
+<TR><TD Width=200><FONT SIZE=1><B>CRT:</B></FONT>
+<TD><FONT SIZE=1>13-inch, .43 mm pitch, high resolution color display</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Cables:</B><BR>
+&nbsp; &nbsp; ZVM-135-1 for the Z-100<BR>
+&nbsp; &nbsp; ZVM-135-2 for the IBM-PC<BR>
+&nbsp; &nbsp; ZVM-135-3 for the Apple<P>
+
+<B>Capacity:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>RGB:</FONT>
+<TD><FONT SIZE=1>25 lines of 80 characters each</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Pixel Resolution</FONT>
+<TD><FONT SIZE=1>640 dots</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Bandwidth:</FONT>
+<TD><FONT SIZE=1>20 MHz</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Rise Time:</FONT>
+<TD><FONT SIZE=1>70 nanoseconds</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Composite Video:</FONT>
+<TD><FONT SIZE=1>25 lines of 40 characters each</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Pixel Resolution</FONT>
+<TD><FONT SIZE=1>250 dots</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Bandwidth:</FONT>
+<TD><FONT SIZE=1>3 MHz</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>&nbsp;&nbsp;Rise Time:</FONT>
+<TD><FONT SIZE=1>100 nanoseconds</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Video Resolution:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>640 horizontal pixels x 240 lines non-interlaced</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>640 horizontal pixels x 480 lines interlaced</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1><B>Weight:</B></FONT>
+<TD><FONT SIZE=1>39 Pounds</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>Operating Voltage:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>Standard Units:</FONT>
+<TD><FONT SIZE=1>105-130 Vac, 60 Hertz</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="80%">
+<TR><TD Width=200><FONT SIZE=1><B>Power Dissipation:</B></FONT>
+<TD><FONT SIZE=1>95 Watts at 120 Vac</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+
+<H5>ZVM-136 & ZVM-136E Color Video Monitor:</H5><P>
+
+<A HREF="../images/ZVM133Fnt.jpg" target="_blank">
+<IMG SRC="../images/ZVM133Fntx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM133Bck.jpg" target="_blank">
+<IMG SRC="../images/ZVM133Bckx.jpg" BORDER="0"></A>
+<A HREF="../images/ZVM133Fnta.jpg" target="_blank">
+<IMG SRC="../images/ZVM133Fntax.jpg" BORDER="0"></A><BR>
+<FONT SIZE=1><I>Pictures courtesy of Richard L. Pestinger of Fairfield, Ohio.</I></FONT><P>
+
+<B>Description:</B> &nbsp;The ZVM-136 is identical to the ZVM-133 RGB-only monitor with the added advantage of a long-persistence phosphor CRT. These pictures are of the ZVM-133.<P>
+
+
+<B>ZVM-136 Specifications:</B><P>
+
+<B>Inputs:</B> (via a DB-25 type connector)<BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=20>&nbsp;
+<TD Width=180><FONT SIZE=1>R, G, B signals</FONT>
+<TD><FONT SIZE=1> - TTL-level digital positive</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Horizontal Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Vertical Sync</FONT>
+<TD><FONT SIZE=1> - TTL positive or negative</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Ground</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>IBM Intensity</FONT>
+<TD><FONT SIZE=1> - TTL-level positive</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<B>CRT:</B><BR>
+&nbsp; &nbsp; 13-inch, .43 mm pitch stripe<BR>
+&nbsp; &nbsp; Internal magnetic shield<BR>
+&nbsp; &nbsp; Long persistance (XLA) phosphor<BR>
+&nbsp; &nbsp; (40 Hertz fusion rate)<BR>
+&nbsp; &nbsp; .7 mm maximum convergence error<P>
+
+<B>Cables:</B><BR>
+&nbsp; &nbsp; ZVM-135-1 for the Z-100<BR>
+&nbsp; &nbsp; ZVM-135-2 for the IBM-PC<BR>
+&nbsp; &nbsp; ZVM-135-3 for the Apple<P>
+
+<B>Operating Voltage:</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="70%">
+<TR><TD Width=200><FONT SIZE=1>&nbsp; &nbsp; Standard Units:</FONT>
+<TD><FONT SIZE=1>105-130 Vac, 60 Hertz</FONT>
+<TR><TD><FONT SIZE=1>&nbsp; &nbsp; "E" Version:</FONT>
+<TD><FONT SIZE=1>210-240 Vac, 50 Hertz</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="80%">
+<TR><TD Width=200><FONT SIZE=1><B>Power Dissipation:</B></FONT>
+<TD><FONT SIZE=1>60 Watts</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+
+<H5>ZVM-139 Color Video Monitor:</H5><P>
+
+Reportedly, there was also produced a ZVM-139. However, I have no information on this model and, to my knowledge, it was never listed in any Heath catalogs.<P>
+&nbsp;<P>
+
+
+<H4>General Troubleshooting:</H4><P>
+
+<B>Condition Symptoms and Checks:</B> &nbsp;The following list of Conditions, Symptoms, and Checks provides you with some problems you may encounter, and the most probable areas to check. This list is NOT inclusive of all the problems that you may encounter, but is meant to guide you through a systematic approach to diagnosing the problem. If you encounter a symptom not listed below, analyze where the problem is located by the way the circuits relate to each other. Finally, don't hesitate to call or e-mail me, Steve Vagts, if you run into difficulty.<P>
+
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="90%">
+<TR><TH>&nbsp;
+<TH ALIGN=LEFT><FONT SIZE=1>SYMPTOM:</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>AREA TO CHECK:</FONT>
+<TH>&nbsp;
+<TR><TD Width=20>&nbsp;
+<TD Width=230><FONT SIZE=1>No color</FONT>
+<TD><FONT SIZE=1>Green/White switch or improper software</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>No display</FONT>
+<TD><FONT SIZE=1>RGB Cable</FONT>
+<TR><TD>&nbsp;
+<TD>&nbsp;
+<TD><FONT SIZE=1>95v Test Point</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Out of Focus</FONT>
+<TD><FONT SIZE=1>Focus Control</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Raster Displayed</FONT>
+<TD><FONT SIZE=1>G2 Control</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Display will not</FONT>
+<TD><FONT SIZE=1>P1, P2 on Sweep Board</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>fit properly on</FONT>
+<TD><FONT SIZE=1>Width Control (LX3261)</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>CRT</FONT>
+<TD><FONT SIZE=1>95v Adjust (R3409)</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Dead Monitor</FONT>
+<TD><FONT SIZE=1>Power cord, Fuse, or On/Off switch</FONT>
+<TR><TD>&nbsp;
+<TD>&nbsp;
+<TD><FONT SIZE=1>Connectors 3R8 or 3S8</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Green color only</FONT>
+<TD><FONT SIZE=1>Green/White switch or improper software</FONT>
+<TR><TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>Screen tears horizontally</FONT>
+<TD><FONT SIZE=1>Check cabling for correct Horiz/Vert +/- sync signal</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>or Screen rolls vert.</FONT>
+<TD><FONT SIZE=1>Check Z-100 video board jumpers</FONT>
+<TR><TD>&nbsp;<P></TD></TR>
+</TABLE>
+
+
+<B>Assembly Part Numbers:</B> &nbsp;While all the monitors in this series use the same general circuitry, there must be some differences as there are different part numbers for the Main Board because some of the monitors are medium resolution while others are high resolution. My information is limited, but here is what I know:<P>
+
+Main Board (circuit board 204-976-010 used on all):<BR>
+&nbsp; &nbsp; 9-227-01: &nbsp; Used on the ZVM-131, ZVM-134<BR>
+&nbsp; &nbsp; 9-227-02: &nbsp; Used on the ZVM-135<P>
+
+High Voltage and Horizontal Sweep Module:<BR>
+&nbsp; &nbsp; 9-247: &nbsp; &nbsp; &nbsp; &nbsp;Used on ZVM-133, 134 and 135<BR> 
+&nbsp; &nbsp; 9-247-04: &nbsp; Used on ZVM-131<BR>
+<B>Note:</B> &nbsp;Coarse Width Assembly (mounted on 9-247)  A-10530:  Used on all<P>
+
+Video Output Module (mounted on CRT socket):<BR>
+&nbsp; &nbsp; 9-155-12: &nbsp; Used on the ZVM-133, 134 and 135<BR>
+&nbsp; &nbsp; 9-155-18: &nbsp; Used on the ZVM-131<P>
+
+Audio/Video Sync Module 9-230-02: &nbsp; Used only on the ZVM-131 and ZVM-135<P>
+
+High Voltage Power Supply Assembly (attached to the 9-247):<BR>
+&nbsp; &nbsp; A-11100-01 or A-11346-01: &nbsp; Used on the ZVM-134<BR>
+&nbsp; &nbsp; A-10632-03: &nbsp; Used on the ZVM-131 and ZVM-135<P>
+
+Other parts differ by model number.<P>
+&nbsp;<P>
+
+
+<H4 ALIGN=LEFT>Specific Monitor Maintenance Information:</H4><P>
+
+<B>ZVM-13x Series Main Board Adjustments:</B> &nbsp;The video adjustments for the ZVM-13x series monitors are located inside the cabinet on the main board, on the high voltage board, and on the neck of the CRT. The adjustments are listed below with reference letters to help you locate them in Figures 1 and 2.<P>
+
+<B>Notes:</B><BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+These adjustments require a monitor with a working, stable display. If a display is not<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+present, you must find and correct the difficulty before continuing.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+See the troubleshooting table of Symptoms and Checks.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+To adjust for color, ensure the Green/White switch is set in the White position.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+You will need a long wooden 1/4" dowel, about 12-14" long, with a straight screwdriver blade<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+whittled on one or both ends to adjust the various controls with ease.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+You will also need a special six-sided plastic alignment tool, available at most electronics<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+parts dealers, to adjust the Horizontal Width Coil.<P>
+
+<B>CAUTION!</B> &nbsp;References to Hot Ground and Cold Ground are made throughout the text. Looking at the rear of an open monitor, you can see a separate metal frame, mounted on the right side of the chassis with a thick red high voltage wire running to the top of the CRT. This is the high voltage & sweep section and is electrically insulated from the rest of the chassis.<P>
+
+<B>HOT GROUND</B> is an AC hot ground! It is taken from the metal plate of this high voltage section.<P>
+
+<B>COLD GROUND</B> is a DC cold ground. It is taken from the main metal chassis of either side or the bar across the top rear of the monitor.<P>
+
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR><TH ALIGN=LEFT><FONT SIZE=1>Main Board Adjustments:</FONT></TH>
+<TR><TD ALIGN=CENTER ROWSPAN=20>
+<A HREF="../images/ZVM1.jpg" target="_blank">
+<IMG SRC="../images/ZVM1x.jpg" BORDER="0" WIDTH=60%></A></TD>
+<TD Width=30><FONT SIZE=1><B>A</B></FONT>
+<TD><FONT SIZE=1>Horizontal Center</FONT>
+<TR><TD><FONT SIZE=1><B>B</B></FONT>
+<TD><FONT SIZE=1>Horizontal Oscillator Adjustment</FONT>
+<TR><TD><FONT SIZE=1><B>C</B></FONT>
+<TD><FONT SIZE=1>Horizontal Oscillator Test Point</FONT>
+<TR><TD><FONT SIZE=1><B>D</B></FONT>
+<TD><FONT SIZE=1>Red Drive</FONT>
+<TR><TD><FONT SIZE=1><B>E</B></FONT>
+<TD><FONT SIZE=1>Green Drive</FONT>
+<TR><TD><FONT SIZE=1><B>F</B></FONT>
+<TD><FONT SIZE=1>Blue Drive</FONT>
+<TR><TD><FONT SIZE=1><B>G</B></FONT>
+<TD><FONT SIZE=1>Red Cut-off</FONT>
+<TR><TD><FONT SIZE=1><B>H</B></FONT>
+<TD><FONT SIZE=1>Green Cut-off</FONT>
+<TR><TD><FONT SIZE=1><B>I</B></FONT>
+<TD><FONT SIZE=1>Blue Cut-off</FONT>
+<TR><TD><FONT SIZE=1><B>J</B></FONT>
+<TD><FONT SIZE=1>Vertical Height</FONT>
+<TR><TD><FONT SIZE=1><B>K</B></FONT>
+<TD><FONT SIZE=1>Vertical Center</FONT>
+<TR><TD><FONT SIZE=1><B>L</B></FONT>
+<TD><FONT SIZE=1>95-Vdc B+ Adjustment</FONT>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<CENTER><H6>Figure 1.</CENTER>
+<CENTER>ZVM-13x Series Monitor Main Board  9-227-02</H6></CENTER><P>
+&nbsp;<BR>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR><TH ALIGN=LEFT><FONT SIZE=1>High Voltage / Sweep Assembly:</FONT></TH>
+<TR><TD ALIGN=CENTER ROWSPAN=20>
+<A HREF="../images/ZVM2.jpg" target="_blank">
+<IMG SRC="../images/ZVM2.jpg" BORDER="0" WIDTH=60%></A></TD>
+<TD Width=30><FONT SIZE=1><B>M</B></FONT>
+<TD><FONT SIZE=1>G2 Control</FONT>
+<TR><TD><FONT SIZE=1><B>N</B></FONT>
+<TD><FONT SIZE=1>Focus Control</FONT>
+<TR><TD><FONT SIZE=1><B>O</B></FONT>
+<TD><FONT SIZE=1>Width Adjustment - Fine</FONT>
+<TR><TD><FONT SIZE=1><B>P</B></FONT>
+<TD><FONT SIZE=1>95-Vdc Test Point</FONT>
+<TR><TD><FONT SIZE=1><B>P1, P2</B></FONT>
+<TD><FONT SIZE=1>Width Adjustment - Course</FONT>
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;<TD>&nbsp;
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+
+<CENTER><H6>Figure 2.</CENTER>
+<CENTER>ZVM-13x Series High Voltage / Sweep Module  9-247A</H6></CENTER><P>
+
+<B>Display/Keyboard Test:</B> &nbsp;If you are using a Z-100 series computer, the ROM located at U190 on the computer's main board has diagnostics included that will help tune the monitor. Use the "Keyboard Test" to fill the screen. Press the {Delete} key to exit.<P>
+
+For those not using a Z-100, as an alternative, you may use BASIC to fill the screen with "Z's". The following program is written in ZBASIC, but may be entered using other generic BASIC programs:<P>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+10  FOR Z=1 TO 2000<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+20  PRINT "Z";<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+30  NEXT Z<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+40  GOTO 40<P>
+
+<B>95-Volt DC Adjustment -- R3409 (L):</B> &nbsp;The 95-volt B+ adjustment is located on the main board. The test point for this voltage is located at the extreme rear bottom corner of the high voltage / sweep assembly module. Refer to Figure 2 for the test point (P) and Figure 1 for the adjustment control location (L).<P>
+
+<B>CAUTION:</B> &nbsp;The test point is on the <B>hot</B> side of the chassis.<P>
+
+<B>To measure the B+ voltage:</B><P>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Connect the monitor to the AC line through an isolation transformer. If an isolation<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+transformer is NOT available, use a battery operated voltage meter.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Select DV voltage and select a range greater than 100 vdc.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Connect the ground (usually black) lead of the voltmeter to HOT AC GROUND - this is<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+the metal plate of the high voltage / sweep module.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Connect the hot (usually red) lead of your voltmeter to test point P. There are several<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+test posts in this area of the board. The correct one is located at the extreme lower left<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+corner under the connector marked 3S3 and is labeled '95v', though very hard to see.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Adjust the control (L) to set the voltage at +95 volts DC, within 5%.<P>
+
+<B>Width Control -- LX3261 (O):</B> &nbsp;The fine adjustment Width Control, LX3261, is located in the horizontal sweep section; see Figure 2. To adjust this Width Control requires a special six-sided plastic alignment tool, available at most electronics parts dealers. Use either the Keyboard Test or the BASIC program and adjust the active video display for about 1/2" margin on each side.<P>
+
+<B>Note:</B> &nbsp;If the controls are adjusted to fill the screen with active video from a Z-100 Computer, then the IBM-PC display will be shifted left and at least the first column of characters will be off the screen. The active display was set by the manufacturer for a 3/4" left margin and 3/8" right margin.<P>
+
+<B>Width Controls -- (P1 and P2):</B> &nbsp;Width Controls P1 and P2 are coarse adjustment jumpers. For Heath/Zenith computers, these jumpers should be set as shown in Figure 2. P1 is in the upper vertical position and P2 is in the lower vertical position. Other computers may require these jumpers to be arranged in a different order. With both P1 and P2 in the lower vertical position, the display width is much wider and rolls off the screen when you are using a Z-100 computer.<P>
+
+<B>RGB Cut-off Adjustments:</B> &nbsp;The RGB drive and cut-off controls are located on the main board and colored appropriately as drive controls Red R2506 (D), Green R2517 (E), and Blue R2528 (F) and cut-off controls Red R2505 (G), Green R2516 (H), and Blue R2527 (I); see Figure 1. Preset the following controls:<P>
+
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+In a darkened room, turn the Brightness control to minimum.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+(Display Drive to minimum and Black Level to mid-range on the ZVM-131 and ZVM-135)<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Turn each Drive control and each Cut-off control fully counter-clockwise.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Adjust G2 (Gain) on the High Voltage / Sweep Assembly until a raster just appears.<P>
+
+<B>Note:</B> &nbsp;A raster is the background of the display as each of the three color electron guns scan the inside of the CRT. You can see each individual scan line across the entire display screen. It is NOT the active display screen. Initially, the scan lines may have a colored tint to them as one gun is stronger than the other two.<P>
+
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Adjust each Cut-off until a gray raster appears.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Readjust G2 until the raster just disappears.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Reset the Brightness control to normal viewing.<P>
+
+<B>RGB Drive Adjustments:</B> &nbsp;To adjust the RGB drives, first create a white screen by booting up ZBASIC and entering the statement: &nbsp; <B>PAINT (0,0),7</B><P>
+This BASIC statement will create a white screen. Observe the screen for red, green, or blue tints. If they are present, adjust out the color by using the appropriate Drive Adjust; see Figure 1. Each drive control is appropriately colored; Red R2506 (D), Green R2517 (E), and Blue R2528 (F).<P>
+
+<B>Note:</B> &nbsp;Not using a bootable Z-100 yet? I've also had some success using the Color command from the Monitor ROM. The display shows all colors, including a white block. Adjust the Brightness control (Display Drive control on the ZVM-131 and ZVM-135) so the color bars are just visible, then adjust the Drive controls for the three primary colors (Red, Green, and Blue) to the same brightness level. Readjust brightness to normal.<P>
+
+<B>Vertical Center Adjustment -- R2125 (K):</B> &nbsp;The Vertical Center adjustment is located on the main board; see Figure 1. This control is used to shift the display up or down. To adjust this control, use either the Keyboard Test or the BASIC program to fill the screen. Adjust the Vertical Center control until the active video display is equal on the top and bottom.<P>
+
+<B>Vertical Height Adjustment -- R3418 (J):</B> &nbsp;The Vertical Height adjustment is located on the main board; see Figure 1. This control is used to adjust the vertical size of the display. To adjust the vertical height, use either the Keyboard Test or the BASIC program to fill the screen. Adjust the Vertical Height control so the display is about 1/2" from top and bottom. This leaves ample room to display line 25, when it is used.<P>
+
+<B>Horizontal Center Adjustment -- R3441 (A):</B> &nbsp;The Horizontal Center adjustment is located on the main board; see Figure 1. This control is used to shift the display left or right. To adjust this control, use either the Keyboard Test or the BASIC program to fill the screen. Adjust the Horizontal Center control until the active video display is equal on the left and right and still about 1/2" on each side. Readjust the Horizontal Width procedure given above, if necessary.<P>
+
+<B>Horizontal Oscillator Adjustment -- L3402 (B):</B> &nbsp;The Horizontal Oscillator adjustment is located on the main board; see Figure 1. To adjust the oscillator, first defeat the APC (Automatic Phase Control) loop. You accomplish this by applying +12 VDC to pin 27 of the sync processor. This will disable the horizontal oscillator to freerun. The oscillator (L3402) should then be adjusted to 15734 plus or minus 15 Hz. This can be accomplished by connecting a frequency counter to pin 3 or 5 of 221-264, and adjusting L3402.<P>
+
+<B>Note:</B> &nbsp;This adjustment may be outside your comfort zone. Unless you made a serious repair to the monitor, this control should NOT need adjustment. Adjust only if necessary for a stable (non-jittery) display and read all the procedures below, particularly the Caution, before proceeding.<P>
+
+Don't have the equipment? Another method of adjusting L3402 is to use a Z-100 and apply the RGB signals to the input of the monitor. Then adjust L3402 for zero beat of the CRT display. What is zero beat? Well, as you adjust L3402, the display will begin to tear one way (left leaning or right leaning) and then as you adjust the other way, will reverse to tear the other way. Zero beat is obtained when the display is most stable between these two situations.<P>
+
+<B>CAUTION:</B> &nbsp;If you turn too far, the oscillator will stop entirely and the monitor will shutdown! Turn off the monitor, readjust the coil back a few turns from the way you were turning, and turn the monitor back on. Continue turning in the reverse direction to find the zero beat (when the tearing begins to slant in the other direction.<P>
+&nbsp;<P>
+
+
+<B>ZVM-13x Series High Voltage / Horizontal Sweep Module:</B> &nbsp;This module is mounted to the right side of the rear monitor chassis and is electrically isolated from the normal chassis - see the warnings regarding Hot AC Ground and Cold DC Ground. It contains several assemblies: the Horizontal Sweep Section, the Course Width Board with two very large jumpers discussed earlier, and the High Voltage Assembly. The high voltage assembly has the following controls:<P>
+
+<B>G2 Adjustment (M):</B> &nbsp;The G2 Gain adjustment is located in the horizontal sweep section; see Figure 2. In a darkened room, adjust G2 by first turning it up clockwise until a raster is shown, then back it down until the raster just disappears.<P>
+
+<B>Focus Control (N):</B> &nbsp;The Focus control is located in the horizontal sweep section; see Figure 2. This control sets the focus of the display - allowing you to see individual pixels close up. To adjust the focus, use either the Keyboard Test or the BASIC program to fill the screen with a character. Adjust the focus control for best focus at a point halfway between center and any corner of the active display area.<P>
+
+<B>NOTE:</B> &nbsp;High Voltage, set at 33 Kv is NOT adjustable.<P>
+&nbsp;<P>
+
+<B>ZVM-13x Series CRT Socket / Video Output Module:</B> &nbsp;This board attaches to the plug end of the picture tube (CRT) and has no adjustable parts. It pulls straight off the CRT by gentle rocking. Do NOT twist!<P>
+&nbsp;<P>
+
+<B>ZVM-13x Series Convergence Adjustments:</B> &nbsp;What is convergence? Well, as you may know, color monitors have three electron guns within the CRT display, providing the three colors; red, green and blue. Convergence adjustments are made to get the three guns to hit the same location on the screen at the same time to create white. The adjustment involves moving three pairs of circular magnets installed on the neck of the CRT to influence the electron stream of each gun. Neat, huh?<P>
+
+Misconvergence appears as a color outline on the edge of an otherwise white character. In severe cases, the normal character may appear as three separate characters, one of each color! We must then attempt to merge these three characters to make one white character. Also, in some cases, the tube's mask may have warped, causing the misconvergence to be seen at only one corner. Those with misconvergence at only one corner, to my knowledge, can't be repaired, so don't even risk it. The CRT must be replaced.<P>
+
+<B>WARNING!</B> &nbsp;Convergence adjustment is not for the faint of heart. There are high voltages in any device using a CRT and these monitors use about 30,000 volts at the CRT anode (the thick, red insulated wire attached to the top of the CRT under a thick insulating boot). And, the monitor must be on while making all adjustments! Unless you have experience with playing with the inside of CRT devices - old televisions, monitors and the like, I recommend that you either live with the situation, send it out for repair, or buy another monitor.<P>
+
+<B>CAUTION:</B> &nbsp;Before doing any adjustment of the convergence rings, make sure they are easily adjustable. Look at the neck of the CRT. Obviously the first thing that you can see is the bunch of neatly packed wires attached to and against the back of the wide area of the CRT. This is the yoke. Also, you know about the circuit board plugged into the rear of the neck of the tube. Midway between the two is a donut-shaped, multi-ringed, non-electrical, device with three pairs of magnetic rings separated with spacers. These are the convergence rings, numbered 1 to 6 from the rear going forward. You should also notice what looks like a dull nail polish, generally brown, along an area uninterrupted by the ring handles to keep the rings from moving. Attempting to move the rings, without first removing this sealant, can damage the assembly or one or more of the rings!<P>
+
+If you have decided to risk it and do a convergence adjustment, follow these procedures:<P>
+
+First, we are going to remove the convergence assembly to free up the rings...<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Power off and unplug the power cord from the monitor.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Remove the back and top covers of the monitor. On the ZVM-134, the back and top are one unit.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Very carefully, unplug the circuit board on the end of the tube's neck...<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+with a slight rocking motion, it just pulls straight back and off. Do not twist!<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Note the position on the convergence assembly on the neck, generally about 1/8 to 1/4" behind<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+the edge of the attachment screw-clamp of the yoke, and note the position of the mounting<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+screw - right side, left side, head up, head down, etc. Write it down!<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Carefully note the position of each ring's handle... it's best to draw a diagram in the shape<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+of a clock face, and place a line and number representing each ring handle in the correct<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+position on the diagram.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Loosen the mounting screw-clamp and using a careful twisting movement break the assembly free of<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+the neck and pull straight back and off. Do NOT try pulling on the ring handles! They break easily.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Using a sharp, single edged, safty-razor blade, gently break off the nail polish-like coating and<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+separate each ring by sliding the blade between and along each ring. Make sure all the rings rotate<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+freely, but with some even amount of tension remaining.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Remount the convergence assembly on the neck of the tube precisely as it was before. I've found<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+there is some play in the positioning, 1/8 to 1/4" behind the yoke, but it is best to be as close to the<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+original mounting as possible. Tighen the screw-clamp only enough to keep the assembly from moving.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Reposition the convergence rings per your diagram. IF you are replacing a broken assembly, all<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+assemblies have different characteristics, so start with all the handles straight up.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Reattach the rear circuit board. It is keyed, so it will only slide on in the correct position.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Apply power and let the monitor warm up. Set the computer to show a full screen of Z's.<P>
+
+<B>WARNING!</B> &nbsp;Use only one hand at a time! NEVER place both hands into the monitor's chassis area at the same time! The object is to protect your heart. Completing a circuit through both hands requires the electricity to flow through your chest! Not ever a good thing.<P>
+
+<B>CAUTION:</B> &nbsp;Voltages on the Video Output Module (rear circuit board mounted on the end of the tube) will cause a tickle if you brush against the huge heat sinks (one for each color) and may catch you by surprise. They are hard to avoid. You can touch these (one hand) and note a change in that gun's pixel strength. Just don't be touching the chassis at the same time!<P>
+
+<B>Note:</B> &nbsp;Some people find the use of a mirror helps to see the screen while making adjustments. For large televisions, this is a must. But, personally, I prefer to view the screen up close while adjusting the rings with my left hand, which also makes it more difficult to stick two hands in the chassis. Whichever method you use, become comfortable with the rings and their interaction (this will take quite a while) before actually trying to get a final setting. When you are ready, reset the convergence rings to their original settings, then make small adjustments to fine tune any problem areas. Don't expect to get the entire screen, concentrate on the center and left corners, as this is where most of the text will be seen.<P>
+
+<B>Note:</B> &nbsp;I wouldn't try to place nail polish back on the assembly to hold the rings in place... with one exception. As careful as you may be, a ring may end up broken. Do not despair. You may still get a workable setting, carefully moving the pieces together as you would the whole ring. Then when you are satisfied, use nail polish to more-or-less permanently glue the rings in place. It will certainly be difficult to separate them again next time.<P>
+&nbsp;<P>
+
+
+<B>ZVM-131 & 135 Video / Audio Sync Module:</B> &nbsp;Unfortunately, none of my monitor Service Manuals have much information on the Video/Audio Sync Module. Here's what I've gleaned from my monitors:<P>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR><TH ALIGN=LEFT><FONT SIZE=1>Video / Audio Sync Module:</FONT></TH>
+<TR><TD ALIGN=CENTER ROWSPAN=20>
+<A HREF="../images/ZVM3.jpg" target="_blank">
+<IMG SRC="../images/ZVM3.jpg" BORDER="0" WIDTH=60%></A></TD>
+<TR><TD>&nbsp;</TD></TR>
+</TABLE>
+
+<CENTER><H6>Figure 3.</CENTER>
+<CENTER>ZVM-131 & ZVM-135 Video / Audio Sync Module  9-230-02</H6></CENTER><P>
+&nbsp;<BR>
+
+<B>Video/Audio Sync Module Adjustments:</B> &nbsp;Referring to Figure 3, there are several controls located on this board, some are meant for use in Composite Mode only, others in RGB Mode only. I'll try to identify these. If anyone has better information on the adjustment of these controls, please let me know.<P>
+
+<B>Tracking Brackground Adjusts:</B> &nbsp;Operative only in Composite Mode, these controls adjust the gray scale tinting. To adjust, connect the Z-100 output from J15, the Composite Video Output Jack, and display the ROM's color bar scale. In composite mode, the Z-100 will show a grey scale. The two controls adjust the tinting as:<P>
+
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+RED R1708 turns the tint blue to the left, purple to the right<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+GRN R1714 turns the tint yellow to the left, blue to the right<P>
+
+Adjust for a gray appearance.<P>
+
+<B>Black Level Adjust (Minimum Gain), YEL R1832:</B> &nbsp;Operative only in RGB mode. I had little success seeing this control affect anything. I suggest leaving it alone or set to mid-range.<P>
+
+<B>Black Level Adjust (Maximum Gain), GRN R1836:</B> &nbsp;Operative only in RGB mode. Set the Black Level control on the ZVM-131 or ZVM-135 to mid-range, than adjust this control to where the screen background just begins to lighten.<P>
+
+<B>A.P.C. Adjust, WHT R2390:</B> &nbsp;This control had NO affect in either video mode and may just be an Audio Pitch Control? I suggest leaving it alone or, if accidently misadjusted, set for mid-range.<P>
+
+<B>3.58 MHz Trap Adjust, L2278:</B> &nbsp;This is a coil in a rather inaccessible location anyway. Unless the monitor's video is jittery, I suggest leaving it alone.<P>
+&nbsp;<P>
+
+
+<B>Bypassing the Video/Audio Sync Module:</B> &nbsp;As noted above, the ZVM-13x series of monitors all have similar circuitry, except for this additional Video/Audio Sync Board found on the ZVM-131 and ZVM-135. Therefore, we can bypass the Audio/Video Sync Module altogether and can feed RGB signals directly into the RGB Main Module (Z-100 use only).<P>
+
+<B>Note:</B> &nbsp;To ensure a properly working monitor, the Video/Audio Sync Module should probably be bypassed anyway to ensure that the Main Board is properly processing straight RGB signals before checking the monitor's operation of composite signal processing. This requires a custom-made connector and cable assembly to be used in place of the Video/Audio Sync Module. However, if the monitor is checked without the Video/Audio Sync Module, don't bother getting too excited over setting the RGB controls of the Main Board. Once the Video/Audio board is reinstalled, the RGB controls will still have to be readjusted anyway because it will greatly affect the RGB signal strength.<P>
+
+If you have a junked ZVM-133 handy (not the ZVM-133T model), you could rob the connector and front panel control assembly and forget the following construction procedures. Just connect the connectors as in the ZVM-133 and you are set to go.<P>
+&nbsp;<P>
+
+
+<B>Construction of a Substitute Test Assembly:</B> &nbsp;Installation will disable the Display Drive and Black Level controls on the monitor.<P>
+
+<B>Materials Required:</B><BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Female DB-25 connector (ribbon connector is fine if using ribbon cable) with mounting hardware.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Small Dual Pole, Dual Throw (DPDT) slide or toggle switch (it has 6 poles).<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Plastic 5-1/4" drive blank cover plate or suitable substitute.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Ribbon cable or colored hook-up wire, about 12" long.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;- &nbsp;
+Suitable connectors for use on the monitor's Main Board.<P>
+
+<B>Note:</B> &nbsp;The power connectors from a junked Z-100 Power Supply work well. Save the spring clips for reuse by prying apart the tabs around the insulation of the present wire and twist the wire to & fro until it snaps free of the connector, then retighten the tabs around the new wire and solder in place. Cut the connectors down to size with a hacksaw blade and trim smooth with a razor blade. Connector <B>D</B> requires 3 wires, Connector <B>E</B> requires 6 wires.<P>
+
+<B>Signal Definitions:</B><BR>
+<B>-------------------</B><BR>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="70%">
+<!-- This table is for the cable Signal Definitions. -->
+<TR><TD WIDTH=20>&nbsp;
+<TH ALIGN=LEFT><FONT SIZE=1>DB-25<BR>PIN#</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>&nbsp;<BR>SIGNAL:</FONT>
+<TH ALIGN=LEFT><FONT SIZE=1>Main Board<BR>Connector & PIN#</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>1</FONT>
+<TD><FONT SIZE=1>Negative Horiz Sync*</FONT>
+<TD><FONT SIZE=1>D-3</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>2</FONT>
+<TD><FONT SIZE=1>Positive Horiz Sync*</FONT>
+<TD><FONT SIZE=1>E-1</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>3</FONT>
+<TD><FONT SIZE=1>NC</FONT>
+<TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>4</FONT>
+<TD><FONT SIZE=1>Positive Vert Sync*</FONT>
+<TD><FONT SIZE=1>E-2</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>5</FONT>
+<TD><FONT SIZE=1>Green Input</FONT>
+<TD><FONT SIZE=1>E-5</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>6</FONT>
+<TD><FONT SIZE=1>Blue Input</FONT>
+<TD><FONT SIZE=1>E-4</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>7</FONT>
+<TD><FONT SIZE=1>Red Input</FONT>
+<TD><FONT SIZE=1>E-6</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>8-13</FONT>
+<TD><FONT SIZE=1>Not Used</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>14</FONT>
+<TD><FONT SIZE=1>Negative Vert Sync*</FONT>
+<TD><FONT SIZE=1>D-2</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>15</FONT>
+<TD><FONT SIZE=1>IBM Intensity Input</FONT>
+<TD>&nbsp;
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>16</FONT>
+<TD><FONT SIZE=1>Ground</FONT>
+<TD><FONT SIZE=1>D-1 & E3</FONT>
+<TR><TD>&nbsp;
+<TD><FONT SIZE=1>17-25</FONT>
+<TD><FONT SIZE=1>Not Used</FONT>
+<TD>&nbsp;
+<TR><TD>&nbsp;
+</TABLE>
+
+
+<B>Construction Procedures:</B><P>
+
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Create a hole in the blank cover suitable for mounting a female DB-25 connector.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Create a hole in the blank cover suitable for mounting your DPDT slide switch.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Install the female DB-25 connector.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Make wires from Main Board <B>D</B> connector to DB-25 connector about 10-12" long.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Make wires from Main Board <B>E</B> connector to DB-25 connector about 8-10" long.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Install dual-pole, dual-throw slide switch.<P>
+
+<B>Note:</B> &nbsp;The DPDT slide switch is meant to cut the Red and Blue Video Signals to allow only the Green Video Signal to be used. The end of the slide switch without any connections will be the Green Position. The end of the slide switch with the Red and Blue wires attached is the White Position.<P>
+
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Cut the Red signal wire from the DB-25 connector such that it can be installed at the center<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+pole of one side of the DPDT slide switch. Connect the other cut end of the Red signal wire to<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+one of the remaining end poles of the same side.<BR>
+&nbsp; &nbsp; &nbsp; &nbsp;[ &nbsp; ] &nbsp;
+Likewise cut and connect the Blue signal wire to the other side and end pole of the switch.<P>
+
+After ensuring the assembly works, bunch the wires to each connector using twist or cable ties to form a neat, long wire assembly. Label the connector and slide switch as necessary. It is also handy to smooth down each connectors' lip with sandpaper and attach a 10", 3/16" dowel to the <B>D</B> connector to assist in installing and removing the connector from the deep bowels of the monitor.<P>
+
+<B>WARNING!</B> &nbsp;Install and remove the assembly with all POWER OFF!<P>
+
+Once the test assembly is in place, proceed with the test procedures given for the main board above. Remember, unless you are using the assembly from an old junk ZVM-133, the monitor's front controls are inoperative, so adjustments are very limited.<P>
+&nbsp;<P>
+
+This concludes the adjustment procedures for the common areas of the ZVM-13x series of color monitor. The procedures will be generally similar for other color monitors. For those that need to troubleshoot their monitors in greater detail, I have the service manuals for most of these models. Contact me for specific needs.<P>
+
+</FONT></TD></TR>
+
+</table>
+</td></tr>
+
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<img src="../images/bar.jpg" hspace="0" vspace="0" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<A HREF="mailto:z100lifeline@earthlink.net"> <img src="../images/email.jpg" HSPACE="0" VSPACE="0" BORDER="0"></A><P><A HREF="mailto:z100lifeline@earthlink.net"><FONT FACE="Verdana, Arial" SIZE="4">z100lifeline@earthlink.net</FONT></A>
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<P>
+<table>
+<tr><td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../index.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../index.html"> HOME Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../lifeline.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../lifeline.html"> LifeLine Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../z100.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../z100.html"> Z-100 Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../repair.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../repair.html"> Repair Page</A>
+</FONT></td>
+
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td>&nbsp;</td><td align=center><center>
+<table>
+<TR><TD VALIGN="top" ALIGN="center" WIDTH="370">
+<FONT SIZE="-2">
+Copyright &copy; 2012, Steven W. Vagts<BR>
+Revised -- January 23, 2012
+</FONT></TD>
+
+</TR>
+</TABLE>
+</center>
+</td></tr>
+</table>    
+</BODY></HTML>

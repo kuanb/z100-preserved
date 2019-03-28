@@ -1,0 +1,321 @@
+<HTML>
+<HEAD>
+<TITLE>IDE Devices</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/tile_sidebar.jpg">
+<!-- VLINK="#ff00ff" LINK="#4000ff" ALINK="#4000ff" TEXT="#000000" -->
+
+<BASEFONT FACE="Verdana, Arial" SIZE="2">
+
+<table border=0 cellpadding=20 cellspacing=0 align=left width="100%">
+<!-- This table is entire page! -->
+<tr><td>
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER=0 WIDTH=100%>
+<!-- This table is just the first pix & Title. -->
+<TR><TD ALIGN="center" VALIGN="middle">
+<A HREF="../images/IDEctrlr02.jpg" target="_blank">
+<IMG SRC="../images/IDEctrlr02.jpg" BORDER="0" width=400></A>
+</TD><TD ALIGN="center"><FONT FACE="Verdana, Arial" SIZE=5>
+<B>Z-100 IDE Devices</B><P> 
+</FONT></TD></TR>
+</TABLE>
+
+<tr><td ALIGN="center">
+<img src="../images/bar.jpg" alt="--Divider--">
+</td></tr>
+
+<tr><td align="center" valign="top">
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH=90%>
+<TR><TD ALIGN=left>
+<FONT FACE="Verdana, Arial" SIZE=2>
+There are four popular IDE devices in use with the Z-100 IDE Controller. These are:<BR>
+</FONT></TD></TR>
+</TABLE></td></tr>
+
+<tr><td align="left" valign="top">
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0">
+<TR><TD ALIGN="center" WIDTH="200">
+<img src="../images/bullet.jpg" hspace="0" vspace="0" alt="*"></TD>
+<TD WIDTH="200"><A HREF="../images/IDED01.jpg" target="_blank">
+<IMG SRC="../images/IDED01x.jpg" BORDER="0"></A>
+</TD>
+<TD><FONT size=2><B>IDE Drives</B></TD></TR>
+
+<tr><td align="left" valign="top">
+<TR><TD ALIGN="center">
+<img src="../images/bullet.jpg" hspace="0" vspace="0" alt="*"></TD>
+<TD><A HREF="../images/IDEcf06.jpg" target="_blank">
+<IMG SRC="../images/IDEcf06x.jpg" BORDER="0"</A>
+</TD>
+<TD><FONT size=2><B>Compact Flash Memory<BR>
+Units in 3.5" Adaptor</B></TD></TR>
+
+<tr><td align="left" valign="top">
+<TR><TD ALIGN="center">
+<img src="../images/bullet.jpg" hspace="0" vspace="0" alt="*"></TD>
+<TD><A HREF="../images/IDEcfPlug02.jpg" target="_blank">
+<IMG SRC="../images/IDEcfPlug02x.jpg" BORDER="0"</A>
+</TD>
+<TD><FONT size=2><B>Compact Flash Memory<BR>
+Plug-in Units</B></TD></TR>
+
+<tr><td align="left" valign="top">
+<TR><TD ALIGN="center">
+<img src="../images/bullet.jpg" hspace="0" vspace="0" alt="*"></TD>
+<TD><A HREF="../images/IDEdom3.jpg" target="_blank">
+<IMG SRC="../images/IDEdom3x.jpg" BORDER="0"></A>
+</TD>
+<TD><FONT size=2><B>Disk On Module<BR>
+Memory Plug-in Units</B></TD></TR>
+</TABLE></td></tr>
+
+<tr><td align="center" valign="top">
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH=90%>
+<TR><TD ALIGN=left>
+<FONT FACE="Verdana, Arial" SIZE=3>
+<B>Considerations and Physical Limits:</B><P></FONT>
+<FONT FACE="Verdana, Arial" SIZE=2>
++ &nbsp;These IDE devices are 40-pin units. There are 44-pin IDE devices on the market, but<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;these devices have four extra pins to provide power within the cable assembly.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;You would have to modify the cable to use these devices.<P>
++ &nbsp;Drives can retain any PC Operating System, which could still use a 16-bit FAT<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(e.g., Windows 9x) or 32-bit FAT (e.g., Windows 98SE).<P>
++ &nbsp;Each Z-100 accessible partition will be limited to 2 GBs in size<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;(imposed by the maximum 16-bit FAT that would be usable by the Z-100)<P>
++ &nbsp;Maximum drive size that could be used with the Z-100 will be 137 GBs,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;as limited by the 28-bit LBA addressing standards before ATA/ATAPI-6.<P>
++ &nbsp;We have found that some software (e.g., Peachtext 5000) do NOT recognize partitions<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;having sizes greater than 32Mb, probably due to addressing limitations.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Therefore, we recommend creating one or two 30Mb partitions on each drive<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for use with this software.<P>
++ &nbsp;The IDE drives will ONLY be recognized by Z-DOS v4.06. No previous versions of DOS,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;nor other operating systems, will recognize the IDE drives at this time.<P>
+We hope to modify other operating systems to use the IDE drives in the future.<P>
+
+<B>NOTE:</B> Newer drives, larger than 137 GBs, are already on the market that meet the new 48-bit LBA addressing standard of ATA/ATAPI-6. Presently, it does not appear that these will be supported by the Z-100. This isn't presently considered a problem because at 2 GB each, what's a person already going to do with 67 partitions?<P>
+
+<B>TIP:</B> Unless you are leaving a large FAT32 partition for use in a PC or clone, it is recommended that you look for devices that are about 1 - 2Gb in size for practical reasons.<P>
+</FONT></TD></TR>
+</TABLE></td></tr>
+
+<tr><td align="center" valign="top">
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH=90%>
+<TR><TD ALIGN=left>
+<FONT FACE="Verdana, Arial" SIZE=3>
+<B>Programming IDE Devices:</B><P></FONT>
+<FONT FACE="Verdana, Arial" SIZE=2>
+<B>Notes:</B><P>
++ &nbsp;While it was envisioned that the IDE devices could be prepared on the Z-100, at the present time, it is best to prepare them on a PC or compatible. An older unit running Windows 95 or 98 is all that is necessary.<P>
+
++ &nbsp;While Windows FDISK will work properly on the larger partitions, we found that it will NOT correctly create partitions less than 32Mb needed to be recognized by the Z-100 operating systems. This is still being investigated.<P>
+
++ &nbsp;Free FDISK is available from other sources that will correctly create partitions less than 32Mb, however, it presently has its own bug that will not correctly determine the size of the last partition! Free FDISK is distributed on the CD with each system sold.<P>
+
+<B>Device Preparation Procedures</B><P>
+
+<B>Note:</B> For those that prefer reading or having the printed procedures beside you while you work, a more complete version of the following can be found published as the Insert in the January - February 2005 issue (#97) of the "<B><I>Z-100 LifeLine</I></B>". While that information is more complete, with a full discussion on file systems, than the brief description given here, some information presented in that article is dated. Please refer to these procedures as more current - particularly the notes, warnings, and cautions.<P>
+
+<B>Note:</B> The 2005 article was written using Windows FDISK, before we found out about having to use some partitions smaller than 32Mb for some software. As pointed out earlier, Windows FDISK has problems creating these smaller partitions and having them recognized by the Z-100. The procedures below will be corrected to use Free FDISK, which has it's own problems, which will be pointed out below.<P>
+
+<B>Note:</B> Additional information on the Compact Flash and Disk on Module Units can be found in Inserts to the May 2008 "<B><I>Z-100 LifeLine</I></B>", issue #113.<P>
+ 
+<B>Note:</B> Before beginning, you must have some partition plan to follow. This will involve figuring out the size and number of partitions, and also the order. Some users prefer having the smaller partitions first, as these will be the most often used for our applications, such as Multiplan, Word Star, Peachtext, etc. The larger partitions should be used to permanently store the application's source disks, have our full \DOS directory of files (remember to place this subdirectory in the PATH command line of your AUTOEXEC.BAT file), or used for backup copies of the smaller partitions.<P>
+
+<B>Note:</B> Also, you must consider the environment that the IDE devices will be operating in. Will this IDE device be the only hard drive on the computer, or will it be installed with an MFM system? The NVsRAM on the IDE Controller should be programmed accordingly. I can send you a disk for reprogramming the NVsRAM for either system, if necessary.<P>
+
+<B>Note:</B> The Z-100 IDE Controller does not care if the IDE device is master or slave, unless more than one device is placed on either controller. The software driver will automatically detect each IDE device.<P>
+
+<B>Note:</B> The IDE device can retain its boot partition from a PC, if necessary, as long as this partition is using the FAT32 filing system - used my most later versions of Windows. This filing system is not recognized by the Z-100 IDE system and is therefore blind to it. Be sure not to destroy this partition (must be first) while using FDISK.<P>
+
+<B>CAUTION:</B> You must have access to an IDE connector in your PC and a Windows Startup Disk. As you are playing with FDISK, to avoid damaging the PC's own hard drive, I recommend disconnecting it from the system to avoid inadvertently reformatting the wrong drive!! It will not be needed and can be reconnected after all this stuff is done.<P>
+
+<B>Note:</B> If you are going to use Free Fdisk, I recommend having it on its own floppy disk and then just install that disk when you are ready to run FDISK. Do NOT mess with your PC's Startup Disk, unless you have a spare.<P>
+
+<B><I>WARNING:</I></B> Changing or deleting partitions will permanently delete any data that was on the partition and it cannot be retrieved! Back up everything that is important to you before you use FDISK.<P>
+
+<I>Finally, after reading all this, if you are uncomfortable doing any or all of this, or if you don't have access to a PC that you care to mess with, don't hesitate to call or e-mail me. I have some spare drives & other devices and can do all this for you, including creating the software for your complete Z-100 system for reasonable prices.</I><P>
+
+Now, let's get started:<P>
+
+<B>To Partition an IDE Device:</B><P>
+
+-- Open the PC and remove the IDE cables to the internal hard drive and any CD/DVD devices. These will not be used.<P>
+
+-- Insert the Startup Disk in the floppy disk drive of the PC.<P>
+
+-- Power up the PC. It should recognize the Startup Disk in Drive A: as the boot device automatically. If not, or if the IDE device has an operating system on an active partition, enter the BIOS and look for an entry that changes the boot device. It may be set for the hard drive only. Change it to "A,C".<P>
+
+-- When the Windows Startup Menu is displayed, select the <B>Start computer without CD-ROM support</B> menu option, and then press {ENTER}.<P>
+
+-- At the command prompt, A:> you may wish to use Windows FDISK to view the existing partitions, but if you are ready to create some partitions less than 32Mb, I recommend swapping out the floppy disk with the one that has Free FDISK.<P>
+
+-- Type <B>FDISK</B> and press {ENTER} when ready.<P>
+
+-- If your IDE device is larger than 512Mb, you may receive the following message:<P>
+
+<I>Free FDISK is capable of using large disk support to allow you to create partitions that are greater than 2,048Mb by using FAT32 partitions. If you enable large disk support, any partitions or logical drives greater than 512Mb will be created using FAT32.<P>
+IMPORTANT: If you enable large disk support, some operating systems will be unable toi access the partitions and logical drives that are over 512Mb in size.<P>
+Do you want to use large disk (FAT32) support (Y/N). [Y]?</I><P>
+
+Unless to are going to keep a large FAT32 active partition with a Windows Operating System on it, you can press <B>{N}</B> and {ENTER}. If you press <B>{Y}</B>, however, and keep your partitions smaller than 512Mb, you would still be fine.<P>
+
+-- The opening screen next becomes (note, the text will be centered on your computer):<P>
+
+<I>Free FDISK Version 1.2.1<BR>
+Fixed Disk Setup Program<BR>
+GNU GPL Copyright Brian E. Reifsnyder 1998-2003<P>
+<B>FDISK Options</B><P>
+Current Fixed Disk Drive: <B>1</B><BR>
+Choose one of the following:<P>
+<B>1.</B> Create DOS Partitions or Logical DOS Drive<BR>
+<B>2.</B> Set Active Partition<BR>
+<B>3.</B> Delete partition or Logical DOS Drive<BR>
+<B>4.</B> Display partition information<P>
+Enter choice: <B>[1]</B></I><P>
+
+-- Pressing <B>{4}</B> will display the present partition information. For example, for my Seagate ST31276 drive, it displayed the following:<P>
+
+<I>Display Partition Information<P>
+Current fixed disk drive: <B>1</B><P>
+Partition&nbsp;&nbsp;Status&nbsp;&nbsp;Type&nbsp;&nbsp;Volume Label&nbsp;&nbsp;Mbytes&nbsp;&nbsp;System&nbsp;&nbsp;Usage<BR>
+<B>C:</B> 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRI DOS &nbsp;ST31276A &nbsp;&nbsp;&nbsp;&nbsp;500 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;41%<BR>
+<B>I:</B> 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRI DOS &nbsp;ST31276G &nbsp;&nbsp;&nbsp;&nbsp;500 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;41%<BR>
+&nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ext DOS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;221 &nbsp;&nbsp;&nbsp;&nbsp;Extended &nbsp;18%<P>
+Total disk space is 1223 Mbytes (1 Mbyte = 1048576 bytes)<P>
+The Extended DOS Partition contains Logical DOS Drives.<BR>
+Do you want to display the logical drive information (Y/N)......?<B>[Y]</B><P>
+
+Press <B>ESC</B> to return to FDISK options</I><P>
+-- Pressing <B>{Y}</B> and {ENTER} gave the following:<P>
+<I>Display Logical DOS Drive Information<P>
+Drv &nbsp;Volume Label &nbsp;Mbytes &nbsp;System &nbsp;Usage<BR>
+<B>D:</B> &nbsp;&nbsp;&nbsp;&nbsp;ST31276B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100 &nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;46%<BR>
+<B>E:</B> &nbsp;&nbsp;&nbsp;&nbsp;ST31276C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;32 &nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;14%<BR>
+<B>F:</B> &nbsp;&nbsp;&nbsp;&nbsp;ST31276D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;32 &nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;14%<BR>
+<B>G:</B> &nbsp;&nbsp;&nbsp;&nbsp;ST31276E &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;32 &nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;14%<BR>
+<B>H:</B> &nbsp;&nbsp;&nbsp;&nbsp;ST31276F &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;26 &nbsp;&nbsp;&nbsp;&nbsp;FAT 16 &nbsp;&nbsp;&nbsp;12%<P>
+Total Extended DOS Partition size is &nbsp;&nbsp;&nbsp;221 Mbytes (1 Mbyte = 1048576 bytes)<P>
+Press <B>ESC</B> to continue_</I><P>
+
+Pressing <B>{ESC}</B> takes us back to the FDISK Options Menu.<P>
+
+-- Before you create partitions, unless you have a new drive, you will have to delete some partitions. So press <B>{3}</B> to go to the delete Partition screen:<P>
+
+<I><B>Delete DOS Partition or Logical DOS Drive</B><P>
+Current fixed disk drive: <B>1</B><P>
+Choose one of the following:<BR>
+<B>1.</B> Delete Primary DOS Partition<BR>
+<B>2.</B> Delete Extended DOS Partition<BR>
+<B>3.</B> Delete Logical DOS Drive(s) in the Extended DOS Partition<BR>
+<B>4.</B> Delete Non-DOS Partition<P>
+Enter choice <B>[_]</B><P>
+Press <B>ESC</B> to return to FDISK options</I><P>
+
+-- As you saw how my partitions were laid out, I'd have to delete the Logical Drive letters one at a time working my way up the partition list until I had all the space that I needed to repartition as I wished. On most existing drives they will have probably two primary partitions and probably one Extended Partition divided into one or more drive letters. Referring to your desired partition plan, you may have to delete everything before you can proceed. Just follow the choices until you have completed what you need.<P>
+
+<B>Note:</B> Remember to leave one Primary Partition, of sufficient size, for your PC if you are planning to use the IDE device as your PC boot device. If you are not, the PC will still recognize all partitions and data on the device any time it is plugged into the PC, so transferring data between the PC and Z-100 is just a matter of plugging the device in. This is considerably easier if you install a Compact Flash device in the PC and Z-100.<P>
+
+-- Once you have completed deleting, you are ready to recreate the new partitions. From the FDISK Option Menu, select <B>{1}</B>. This brings up the menu:<P>
+
+<I><B>Create DOS Partitions or Logical DOS Drive</B><P>
+Current fixed disk drive: <B>1</B><P>
+Choose one of the following:<BR>
+<B>1.</B> Create Primary DOS Partition<BR>
+<B>2.</B> Create Extended DOS Partition<BR>
+<B>3.</B> Create Logical DOS Drive(s) in the Extended DOS Partition<P>
+Enter choice: <B>[_]</B><P>
+Press <B>ESC</B> to return to FDISK options</I><P>
+
+-- Depending upon what you deleted, you can proceed to create partitions accordingly. Most PC systems recognize two to four primary DOS partitions. The Z-100 doesn't care; it can't detect the difference between a primary DOS partition or a logical drive letter. It treats all the partitions the same. One difference of note, however, will be the partition order. As you look at the drive letters above, FDISK listed the first primary and second primary partitions first, then listed the extended partition next, but the second primary partition's drive letter is listed last, <B>I</B>. The physical positioning is as created: First Primary, Second Primary, then the smaller divided up Extended Partition - the same order that the Z-100 will detect. Therefore, the device's drive letters on the
+PC will NOT match the order on the drives in the Z-100.<P>
+
+<B>Note:</B> To keep track of drive letters, I recommend giving each partition a name when the partition is formatted, in the order that it was created and will be detected on the Z-100. For example, each of the ST31276 drive's partitions was given the drive's name and a letter to represent it. The first partition was named, ST31276x, where x was A, the second, B, etc. Then when I use ZDIR on a partition, the drive's label is right there to help keep me straight.<P>
+
+Naming your partitions is particularly helpful if you have multiple IDE devices on the Z-100, because the Z-100 detection system has a similar problem to the PC's addressed in the last note. With two or more IDE devices detected, the drives will be listed in the order of:<P>
+
+Master IDE1, first partition<BR>
+Slave IDE1, first partition<BR>
+Master IDE2, first partition<BR>
+Slave IDE2, first partition<BR>
+Remaining partitions of master IDE1<BR>
+Remaining partitions of slave IDE1<BR>
+Remaining partitions of master IDE2<BR>
+Remaining partitions of slave IDE2<BR>
+Until all drive letters up to "Z" are used up.<P>
+
+This was done on purpose, expecting that each device would only have one or two partitions. However, we have since found out that many if not most Z-100 software applications will not recognize partitions greater than 32Mb due to address limitations. This forced us to divide the IDE devices into numerous smaller partitions. Unless you name your partitions on each device, good luck keeping it all straight!<P>
+
+&nbsp;<P>
+<B>How to Format an IDE Device</B><P>
+
+After you create the partitions, and you are happy with each of their sizes, you must format each partition. It is recommended that this be done from the Windows Startup Disk. While the Z-100 has PCFORMAT that could be used, it is relatively untested. I've used it a few times to fix partitions where the File Allocation Table was messed up by corrupted write operations during testing of the IDE controller and I had great success. But usually I've been using the Windows Startup Disk utilities because these are handy (having just created the partitions here) and they are well tested. I've also had to use SCANDISK to straighten out FAT problems that my testing on the Z-100 had created.<P>
+
+-- Restart the PC computer with the Windows Startup Disk. This is to recognize the new partitions that were created with FDISK or Free FDISK.<P>
+
+-- Run FORMAT X:, where X: is the drive letter of the new partitions detected by the PC. These will start at drive C: and go up from there. Remember, the partition order will be different from that which will be given by the Z-100. On the PC, the Second Primary Partition will have the last drive letter - with exceptions. For example, if you used three or four primary partitions, without any logical drives, the order will remain as expected!<P>
+
+-- When FORMAT asks for a volume label, give it one. I suggest it be the drive model number and a letter. The volume labels are given during directory listings.<P>
+</FONT></TD></TR>
+</TABLE></td></tr>
+
+
+<tr>
+<td valign="middle" align="center">
+<img src="../images/bar.jpg" hspace="0" vspace="0" alt="--Divider--">
+<P></td></tr>
+
+<tr>
+<td valign="middle" align="center">
+<A HREF="mailto:z100lifeline@earthlink.net">
+<img src="../images/email.jpg" HSPACE="0" VSPACE="0" BORDER="0"></A><BR>
+<A HREF="mailto:z100lifeline@earthlink.net"><FONT FACE="Verdana, Arial" SIZE="4">z100lifeline@earthlink.net</FONT></A><P>
+&nbsp;<P>
+
+</td></tr>
+<tr>
+<td valign="middle" align="center">
+<table>
+<TR><td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../index.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../index.html"> HOME</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../lifeline.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../lifeline.html"> History Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../z100.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../z100.html"> Z-100 Page </A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../repair.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../repair.html"> Repair Page </A>
+</FONT></td>
+
+</td></tr>
+</table>
+</td></tr>
+
+<tr>
+<td align=center><center>
+<table>
+<TR><TD VALIGN="top" ALIGN="center" WIDTH="350"><FONT SIZE="-2">
+Copyright &copy; 2009, Steven W. Vagts<BR>
+Revised -- December 15, 2009<BR>
+</FONT></TD>
+<TD VALIGN="top" ALIGN="center" WIDTH="176">
+<A HREF="http://www.earthlink.net/">
+<img src="../images/hosted.jpg" border=0 ALT="Hosted by EarthLink"></A>
+</TD></TR>
+</TABLE>
+</center>
+</td></tr>
+</table>    
+</BODY></HTML>

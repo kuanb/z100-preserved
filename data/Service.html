@@ -1,0 +1,884 @@
+<HTML>
+<HEAD>
+<TITLE>H/Z-100 Service Bulletins</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/tile_sidebar.jpg" VLINK="#ff00ff" LINK="#4000ff" ALINK="#4000ff" TEXT="#000000">
+
+<BASEFONT FACE="Verdana, Arial" SIZE="2">
+
+<table border=0 cellpadding=10 cellspacing=0 width=100% align=left>
+<!-- This table is for the entire document! -->
+<tr><!-- This is the first row of the table; sets top margin. -->
+<td valign="middle" align="left"></td>
+
+<td width=90% align=center>
+<!-- This <td> sets the left margin for the border. -->
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<!-- This table is the title of the page. -->
+<TR>
+<TD WIDTH=100% ALIGN=center VALIGN=middle>
+&nbsp;<P>
+<FONT FACE="Verdana, Arial" SIZE=5>
+<B>H/Z-100 Field Service Bulletins<P></B></FONT>
+&nbsp;<P></TD></TR>
+</TABLE>
+<img src="../images/bar.jpg" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td>
+<td align="center" valign="middle">
+<table border=0 cellpadding=10 cellspacing=0 width=100%>
+<!-- This table contains ALL the graphics and text blocks. -->
+
+<TR><TD ALIGN=left><FONT FACE="Verdana, Arial" SIZE=2>
+<B>General Notes:</B><P>
+
+-- The following article appeared as an insert to issue #42, November-December 1995, of the <I>"Z-100 LifeLine"</I>.<P>
+
+<CENTER><B>Z-100 Field Service Bulletins</B></CENTER><P>
+
+<I>Some of these bulletins contain out-of-date information, however, I left it in for two reasons - I don't know for certain if the information still applies, and older machines and publications are still out there to which the information may still apply - such as the Z-100 Interim Service and the Service Data Manuals, which seem to be completely different from the Z-100 Service Manual I received from Paul. Also, while you may not have some of the manuals mentioned, I thought the information may still be valuable for your other manuals or notes. Where I have updated information, I have added it.- ed.</I><P>
+&nbsp;<P>
+
+<B>FSB-Z100-001: Disk Drive Specifications</B><P>
+
+The specifications in both the Service Data Manual and the Z-100 Product Info Manual stated the disk controller will support up to four 8" drives and four 5.25" drives. At that time, it was a hardware specification rather than a software specification. Early software only supported 2 each of the 5.25" and 8" drives.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-002: Blooming of Display</B><P>
+
+Some All-In-One computers exhibited "blooming" of the video display for about 20 seconds after turn on. This condition was considered normal.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-003: Metal Filings in Cabinet</B><P>
+
+When a Z-100 microcomputer is disassembled, you may notice small metal filings on the bottom of the cabinet on either side. These filings were from the self tapping sheet metal screws that were used. Carefully remove any metal filings with a vacuum cleaner or cloth. This problem has been corrected in later production by using regular sheet metal
+screws.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-004: Changes to Service Data Manual</B><P>
+
+Please make the following changes in your Z-100 Service Data Manual:<BR>
+- On page 3-159, middle column, change U219 from 74ALS74 to 74S74.<BR>
+- On page 4-13, third paragraph, change "...logic zero on VDRAMSEL (U337-4) and..." to "...logic zero on VIDRAMSEL (U377-4) and..."<P>
+
+- Schematic MB1:<BR>
+-- Locate C178 & C179 at the crystal inputs to the 8085 CPU (U210). Note that these capacitors may not be installed, as the crystal used at Y101 did not require them to operate. <I>(To my knowledge, these capacitors were never installed - ed.)</I><BR>
+-- Locate U198-11 at the data output latch. This line connects to U220-12, so the correct mnemonic is CPUWR, not CPUWR as indicated in an earlier update.<BR>
+-- Locate U188-7 in the swap timing circuits and mark it "88SELD." This line goes to the extended addressing circuits at U193-1, to NDEF(8088) at U215-2, and to the status circuits at U226.<P>
+
+Refer to the table shown below as you update your schematic.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=90% align="center">
+<TR><TD WIDTH=25%><U>IC</U></TD>
+<TD WIDTH=35%><U>Location</U></TD>
+<TD WIDTH=20%><U>From</U></TD>
+<TD WIDTH=20%><U>To</U></TD></TR>
+<TR><TD>U211-23  </TD><TD>8088 CPU       </TD><TD>Z        </TD><TD>H       </TD></TR>
+<TR><TD>U219     </TD><TD>Bus Ctrl Out   </TD><TD>ALS74    </TD><TD>S74     </TD></TR>
+<TR><TD>U219     </TD><TD>Bus Ctrl Out   </TD><TD>443-1051 </TD><TD>443-900 </TD></TR>
+<TR><TD>U220-12  </TD><TD>Bus Ctrl Out   </TD><TD>L        </TD><TD>P       </TD></TR>
+<TR><TD>U237D    </TD><TD>Bus Ctrl Out   </TD><TD>ALS74    </TD><TD>LS125   </TD></TR>
+<TR><TD>U237D    </TD><TD>Bus Ctrl Out   </TD><TD>443-1051 </TD><TD>443-811 </TD></TR>
+<TR><TD>U202-9   </TD><TD>Interrupt latch</TD><TD>L        </TD><TD>P       </TD></TR>
+<TR><TD>C189     </TD><TD>Reset circuits </TD><TD>22/10    </TD><TD>100uF   </TD></TR>
+<TR><TD>D101     </TD><TD>Reset circuits </TD><TD>1N4149   </TD><TD>1N5817  </TD></TR>
+<TR><TD>U226-13  </TD><TD>Status circuits</TD><TD>A0       </TD><TD>A3      </TD></TR>
+<TR><TD>U226-13  </TD><TD>Status circuits</TD><TD>88SEL    </TD><TD>88SELD  </TD></TR>
+</TABLE><P>
+
+- Schematic MB3<P>
+
+Refer to the table shown below as you update your schematic.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=90% align="center">
+<TR><TD WIDTH=25%><U>IC</U></TD>
+<TD WIDTH=35%><U>Location</U></TD>
+<TD WIDTH=20%><U>From</U></TD>
+<TD WIDTH=20%><U>To</U></TD></TR>
+<TR><TD>U151-11  </TD><TD>refrsh-Wait Timg</TD><TD>H  </TD><TD>P  </TD></TR>
+<TR><TD>U170-10  </TD><TD>Refrsh-Wait Timg</TD><TD>H  </TD><TD>P  </TD></TR>
+<TR><TD>U151-13  </TD><TD>Refresh Timing  </TD><TD>H  </TD><TD>P  </TD></TR>
+<TR><TD>U167-8   </TD><TD>Refresh Timing  </TD><TD>H  </TD><TD>P  </TD></TR>
+</TABLE><P>
+
+- Schematic MB4<P>
+
+Refer to the table shown below as you update your schematic.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=90% align="center">
+<TR><TD WIDTH=25%><U>IC</U></TD>
+<TD WIDTH=35%><U>Location</U></TD>
+<TD WIDTH=20%><U>From</U></TD>
+<TD WIDTH=20%><U>To</U></TD></TR>
+<TR><TD>U160-1 thru -8</TD><TD>Timer           </TD><TD>Z  </TD><TD>P  </TD></TR>
+<TR><TD>U204-35       </TD><TD>Keyboard Encoder</TD><TD>H  </TD><TD>L  </TD></TR>
+</TABLE><P>
+
+- Schematic VB1<P>
+
+Locate VIDRAMDRY at P305-62 and remove the overbar. This line asserts on logic one.<P>
+
+Refer to the table shown below as you update your schematic.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=90% align="center">
+<TR><TD WIDTH=25%><U>IC</U></TD>
+<TD WIDTH=35%><U>Location</U></TD>
+<TD WIDTH=20%><U>From</U></TD>
+<TD WIDTH=20%><U>To</U></TD></TR>
+<TR><TD>U345-2   </TD><TD>68A21 PIA      </TD><TD>L  </TD><TD>H* </TD></TR>
+<TR><TD>U345-4   </TD><TD>68A21 PIA      </TD><TD>L  </TD><TD>H* </TD></TR>
+<TR><TD>U345-9   </TD><TD>68A21 PIA      </TD><TD>L  </TD><TD>H  </TD></TR>
+<TR><TD>U345-19  </TD><TD>68A21 PIA      </TD><TD>L  </TD><TD>H  </TD></TR>
+<TR><TD>U301-13  </TD><TD>Paral/Ser.Conv.</TD><TD>Q4 </TD><TD>QH </TD></TR>
+<TR><TD>U337-1   </TD><TD>Timing & Ctrl  </TD><TD>L  </TD><TD>H* </TD></TR>
+<TR><TD>U337-3   </TD><TD>Timing & Ctrl  </TD><TD>L  </TD><TD>H* </TD></TR>
+<TR><TD>U337-14  </TD><TD>Timing & Ctrl  </TD><TD>P  </TD><TD>L* </TD></TR>
+<TR><TD>U337-16  </TD><TD>Timing & Ctrl  </TD><TD>P  </TD><TD>L* </TD></TR>
+<TR><TD>U371-14  </TD><TD>VRAMSEL PROM   </TD><TD>L  </TD><TD>H  </TD></TR>
+</TABLE><P>
+
+
+- Schematic VB3<P>
+
+Refer to the table shown below as you update your schematic.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=90% align="center">
+<TR><TD WIDTH=25%><U>IC</U></TD>
+<TD WIDTH=35%><U>Location</U></TD>
+<TD WIDTH=20%><U>From</U></TD>
+<TD WIDTH=20%><U>To</U></TD></TR>
+<TR><TD>U307     </TD><TD>RGB driver </TD><TD>F244 </TD><TD>LS244 </TD></TR>
+</TABLE><P>
+
+
+- Z207 Schematic<P>
+
+Locate the lower portion of U9 (near the 5" interface connector) and change the buffer symbol as follows:<P>
+
+<CENTER><IMG SRC="../images/ZFSB01.jpg" BORDER="0"></CENTER><P>
+&nbsp;<BR>
+
+<B>FSB-Z100-005: Z-207 Floppy Disk Controller Card<BR>
+More Efficient Heat Sink Grease</B><P>
+
+To allow a more efficient transfer of heat from regulator (PS3) to the heat sink, the silicone grease (HE 352-13) was replaced with thermal compound (HE 352-31). To correct your Z-100 Service Manual, page 5-180, second column, change "silicone grease HE 352-13" to "Thermal compound HE 352-31."<P>
+&nbsp;<P>
+
+<B>FSB-Z100-006: Test Operates Erratically</B><P>
+
+When the H/Z-100 is disassembled and reconnected with extended length cables to be used as a test bed, the unit may operate erratically, making it difficult to troubleshoot. Symptoms include failure to boot a disk, or the CRT may print characters at the wrong baud rate, or the CRTC may not initialize properly, among others. One cause may be the length of the two 40-pin ribbon cables connecting the video board to the motherboard. If not positioned properly, these cables will pick up noise from other cables or from the video monitor.<P>
+
+In most cases, you can correct the problem by routing the ribbon cables under the chassis and video board. If this doesn't correct the problem, then replace the two cables with 40-pin shielded ribbon cables.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-008: New Connectors at P104 and P106</B><P>
+
+The 40-pin connectors at P104 and P106 on the motherboard were changed to remove pin 7 for P104 and pin 47 for P106.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-009: Power Supply</B><P>
+
+The power supplies were changed to incorporate the extra cable needed for the Winchester Controller.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-010: Video Alignment</B><P>
+
+When aligning a monitor used with a Z-100 microcomputer, there are four short programs you may use under ZBASIC to help in video alignment:<P>
+
+10  'WHITE SCREEN<BR>
+20  CLS<BR>
+30  PAINT (0,0),7<BR>
+40  END<P>
+
+10  'RGB<BR>
+20  CLS<BR>
+30  LINE (0,175)-(640,175),1<BR>
+40  LINE (0,75)-(640,75),1<BR>
+50  LINE (320,0)-(320,75),1<BR>
+60  PAINT (0,0),4,1<BR>
+70  PAINT (330,0),2,1<BR>
+80  PAINT (0,80),7,1<BR>
+90  PAINT (0,200),1,1<BR>
+100 END<P>
+
+10  'CROSSHATCH<BR>
+20  CLS<BR>
+30  FOR I=0 TO 640 STEP 30<BR>
+40  LINE (I,0)-(I,240),7<BR>
+50  NEXT I<BR>
+60  FOR I=0 TO 250 STEP 15<BR>
+70  LINE (0,I)-(630,I),7<BR>
+80  NEXT I<BR>
+90  GOTO 90<P>
+
+10  'DOTBAR<BR>
+20  CLS<BR>
+30  FOR I=0 TO 39<BR>
+40  FOR L=0 TO 24<BR>
+50  PRINT ".";<BR>
+60  NEXT L<BR>
+70  NEXT I<BR>
+80  GOTO 80<P>
+&nbsp;<P>
+
+<B>FSB-Z100-011: J101 and J102 ROM Jumpers Incorrect</B><P>
+
+On page 2-20 of the Z-100 Interim Service Manual (HE 860-15) and page 3-10 of the Z-100 Service Manual (593-75), the table showing J101 and J102 jumper positions for the 16K and 32K ROMs is incorrect. Shown below is a corrected table. The jumper descriptions given on page 2.4 of the Z-100 Technical Manual are correct.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<TR><TD WIDTH=50%><U>ROM</U></TD>
+<TD WIDTH=25%><U>J101</U></TD>
+<TD WIDTH=25%><U>J102</U></TD></TR>
+<TR><TD>2764 (8K)   </TD><TD>0  </TD><TD>0  </TD></TR>
+<TR><TD>27128 (16K) </TD><TD>0  </TD><TD>1  </TD></TR>
+<TR><TD>27256 (32K) </TD><TD>1  </TD><TD>1  </TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+<B>FSB-Z100-012: Unreliable 64K RAM ICs</B><P>
+
+Texas Instruments 64K RAM chips, date coded from 8146 to 8236, may not operate reliably. To correct, replace these ICs with ones having a different date code.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-013: Z-120 Beeps, But Fan Won't Run; Vertical Roll</B><P>
+
+Check to see if the sweep circuit board is properly installed. If this board is installed incorrectly, the foil side of the circuit board may touch the CRT support panel and short out the circuit board. FSB-Z100-045 also applies.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-014: Unit Hangs Up After Lengthy Operation</B><P>
+
+Check the programmable interrupt controllers U208 and U209 (HE 443-1012). These ICs may be defective.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-015: Z-207 Floppy Disk Controller Card; 12-volt Line Shorted</B><P>
+
+Some ribbon cables connecting the 8" interface to the rear chassis have too much wire protruding past the controller board connector. This extra wire may pierce the board resist and short to the 12 Vdc line.<P>
+
+To correct, either trim off the excess wire, or wrap it with a piece of insulating tape, or both. Later production runs have a new 50-wire cable that does not require taping.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-016: Z-207 Parts Change - C6</B><P>
+
+The 10 uF capacitor at C6 was changed to a 33 uF capacitor to decrease the number of soft errors.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-017: Floppy Controller Won't Access Drives</B><P>
+
+Check switch DS1 on the floppy controller card for proper installation and switch settings. Looking at the board with the S-100 connector pins at the bottom, these are:<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=60% align="center">
+<TR><TD WIDTH=15%></TD><TD WIDTH=15%></TD>
+<TD WIDTH=5%>7</TD><TD WIDTH=5%>6</TD><TD WIDTH=5%>5</TD><TD WIDTH=5%>4</TD>
+<TD WIDTH=5%>3</TD><TD WIDTH=5%>2</TD><TD WIDTH=5%>1</TD><TD WIDTH=5%>0</TD></TR>
+<TR><TD>ON</TD><TD>(1)</TD><TD>X</TD><TD></TD><TD>X</TD>
+<TD>X</TD><TD> </TD><TD> </TD><TD> </TD><TD> </TD><TD>^ Up</TD></TR>
+<TR><TD>OFF</TD><TD>(0)</TD><TD> </TD><TD>X</TD><TD> </TD><TD> </TD>
+<TD>X</TD><TD>X</TD><TD>X</TD><TD>X</TD><TD></TD></TR>
+</TABLE><P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<COLGROUP ALIGN="CENTER">
+<TR><TD WIDTH=40%><U>Section:</U></TD><TD><U>Use:</U></TD></TR>
+<TR><TD>0</TD><TD>TPI</TD></TR>
+<TR><TD>1</TD><TD>PreComp</TD></TR>
+<TR><TD>2</TD><TD>Not Used - Set at 0</TD></TR>
+<TR><TD>3-7</TD><TD>Port Addressing</TD></TR>
+</COLGROUP></TABLE><P>
+&nbsp;<BR>
+
+<B>FSB-Z100-018: Checkout Procedures</B><P>
+
+Logic states in the Z-100 Interim Service Manual troubleshooting sections and schematics were measured in a unit containing version 1.0 of MTR100. Since the Z-100 Interim Service Manual was published, several revisions to this ROM had been released.<P>
+
+In some of these revisions, the firmware will either initialize a circuit that wasn't previously initialized or initialize it differently than before. The result is that the logic states in these circuits may not match those shown in the Z-100 Interim Service Manual.<P>
+
+In the Interim Service Manual, HE 860-15, volume one, there is a procedure outlined on pages 2-112 and 2-113 describing power measurements of the power supply with the supply unloaded. DISREGARD THIS PROCEDURE. When a switching power supply is unloaded, the voltage measurements are unreliable. Therefore perform any required voltage measurements with all modules connected, or use a suitable power supply load.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-019: ZW-120 Hard Drive Causes Floppy Disk Errors</B><P>
+
+Floppy disk errors in a Winchester environment may be caused by EMI radiating from the hard drive to the floppy disk drive. To correct this problem, secure a shield to the bottom of the Winchester drive. The shield was installed on later production runs.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-021: IC Change at U218</B><P>
+
+To permit the use of a multi-sourced part, the 96LS02 IC (HE 443-1040) at U218 was changed to a 9602 IC (HE 443-1112) on later production runs. This was not a modification and the change was not required.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-022: Dim Display</B><P>
+
+When troubleshooting a color video board, make sure that control R301 is in its fully CCW position as viewed from the component side of the board. If this control has been adjusted by the customer to a position other than CCW, a dim display may result.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-023: Changed Power Supply Part Numbers</B><P>
+
+The part numbers for the power supplies for the Low Profile Computer was changed from HE-234-257 to HE 234-319 and for the All-In-One, from HE 234-256 to HE 234-320.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-024: Z-207 Floppy Disk Controller Card Soft Error Reduction</B><P>
+
+Connect a 10 uF capacitor in parallel with the 0.1 uF capacitor at C32. Be sure the positive and negative leads of the 10 uF capacitor are positioned to the left of the component side of the board (with the 100-pin connector down).<P>
+
+This update was performed only "as needed." <I>(I don't know about earlier boards, but the 85-2807-2 and -3 boards already have both capacitors installed, as C32 and C32-1. Check earlier boards, the -1 board also may have it installed - ed.)</I><P>
+&nbsp;<P>
+
+<B>FSB-Z100-025: Reprint of FSB-Z100-011</B><P>
+&nbsp;<P>
+
+<B>FSB-Z100-026: Z-100 Interim Service Manual Corrections</B><P>
+
+Please make the following corrections to the Z-100 Interim Service Manual:<P>
+
+- Page 3-104: In the second & third paragraphs, cross out "video board" and write in "motherboard."<P>
+
+- Page 3-120: Fifth step from the bottom, change "U152-13 = L" to "U152-13 = P."<P>
+
+- Schematic MB3: Locate U170; this is a dual 4-input NAND gate in the refresh timing and the wait timing circuits. Cross out "ALS40" and replace it with "ALS1020."<P>
+
+- Z-207 Floppy Disk Controller Schematic:<P>
+
+-- Locate the INTRQ line at U22-39 and trace it left to U25-3 (next to RP3-2). Change U25-3 to U25-13.<P>
+
+-- Locate the two inverter sections labeled "U28" beside "U15" and "U14" on your schematic (see the following figure) and change to "U10."<P>
+
+<CENTER><IMG SRC="../images/ZFSB04.jpg" BORDER="0"></CENTER><P>
+
+-- Locate U22-38. Change "ORG" to DRQ."<P>
+
+-- To make the schematic agree with the printed circuit board, change the schematic jumper numbers as follows:<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=80% align="center">
+<TR><TD WIDTH=25%>FROM</TD>
+<TD WIDTH=25%>TO</TD>
+<TD WIDTH=50%>Schematic</TD></TR>
+<TR><TD><U>(Schematic):</U></TD>
+<TD><U>(Circuit Bd):</U></TD>
+<TD><U>Location:</U></TD>
+<TR><TD>J1 - J8 </TD><TD>J3 - J10 </TD><TD>Interrupt Jumpers       </TD></TR>
+<TR><TD>J9      </TD><TD>J1       </TD><TD>Near U19 (RDY delay)    </TD></TR>
+<TR><TD>J10     </TD><TD>J2       </TD><TD>Near U11-1 on 8"/5" line</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+- On page 7.12 and 12.34 of the Z-100 Interim Service Manual, add the following commands to the Command Summary charts appearing on these pages.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<TR><TD WIDTH=70%><U>Command</U></TD>
+<TD WIDTH=30%><U>Code (Hex)</U></TD></TR>
+<TR><TD>Enable Interrupts </TD><TD>0C </TD></TR>
+<TR><TD>Disable Interrupts</TD><TD>0D </TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+<B>FSB-Z100-027: System Crashes When Winchester Is Installed</B><P>
+
+This may be caused by the HE 444-151 (U28) and HE 444-152-2 (U29) PALs on the Winchester controller board. Under certain circumstances, these PALs may cause a glitch on pin 19 (CDSB*) of the S-100 bus, causing memory failure.<P>
+
+To correct this condition, replace the HE 444-151 and HE 444-152-2 PALs with HE 444-151-1 and HE 444-152-3 PALs respectively. Replace both parts together, as they are a set. Replace these parts on all units.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-028: Z-205 Manual Correction</B><P>
+
+Superseded by FSB-Z100-036.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-029: Z-100 Schematic Corrections</B><P>
+
+Please make the following changes to your Z-100 Interim Service Manual (HE 860-15) schematics:<P>
+
+- Schematic MB3: At U126 (upper left corner of the schematic), change "TRI-STATE OCTAL LATCH" to "TRI-STATE OCTAL BUFFER."<P>
+
+- Schematic VB1: The two NOR gates at U379 in the CRTC/CPU arbitration logic (lower left corner of the schematic) are marked with two part numbers: HE 443-1045 and HE 443-1075. Cross out part number HE 443-1075.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-030: Z-207 Manual Correction; Transistor (Q2 and Q3) Markings</B><P>
+
+In the Z-207 Floppy Disk Controller Card Manual HE 595-2909-01, make the following changes:<P>
+
+- Page 7: Left column, under "Transistors",<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=90% align="center">
+<TR><TD WIDTH=15%>Change:</TD>
+<TD WIDTH=10%>C3</TD>
+<TD WIDTH=20%:>417-937</TD>
+<TD WIDTH=5%:>2</TD>
+<TD WIDTH=35%>MPS2369</TD>
+<TD WIDTH=15%>Q2, Q3</TD></TR>
+<TR><TD>To:</TD>
+<TD>C3</TD>
+<TD>417-937</TD>
+<TD>2</TD>
+<TD>MPS2369 or PN2369A</TD>
+<TD>Q2, Q3</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+- Page 18: Left column, fourth and fifth steps,<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=80% align="center">
+<TR><TD WIDTH=20%>Change:</TD>
+<TD WIDTH=80%>...MPS2369 transistor...</TD></TR>
+<TR><TD>To:</TD>
+<TD>...MPS2369 or PN2369A transistor...</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+- Page 59: "Transistors" chart, in the "May Be Replaced With" column,<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=70% align="center">
+<TR><TD WIDTH=20%>Change:</TD>
+<TD WIDTH=80%>MPS2369</TD></TR>
+<TR><TD>To:</TD>
+<TD>MPS2369 or PN2369A</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+<B>FSB-Z100-031: C35 Fails on Floppy Controller Board</B><P>
+
+The 10 uF electrolytic capacitor at C35 on the Floppy Controller Board, 85-2807-1, is being installed backwards because of incorrect circuit board screening and incorrect instructions in the assembly manual and the HE 591-4245 manual insert. So, on any HE 85-2807-1 board received for service, install the capacitor at C35 with the "+" lead connected to pin 21 of U22. The 85-2807-0, -2, and -3 controller boards are correct.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-032: Winchester Disk Drive Configuration</B><P>
+
+Some confusion has arisen on proper configuration of replacement Winchester disk drives for operation within H/Z-100 computers. As shipped, the 16-pin programming plug usually has all pin pairs shorted with the possible exception of pin pairs 3-14 and 4-13. To eliminate confusion while configuring the programming plug, a configuration guide is given below. Refer to the guide when replacing Winchester disk drives in these units.<P>
+
+To configure the Winchester disk drive, select the proper hardware unit and refer to the table below:<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER">
+<TR><TD WIDTH=40%></TD>
+<TD WIDTH=60% COLSPAN=2>Hardware Unit Number</TD></TR>
+<TR><TD>Pin Pair:</TD><TD> 1</TD><TD> 2</TD></TR>
+<TR><TD>1-16</TD><TD>Open</TD><TD>Open</TD></TR>
+<TR><TD>2-15</TD><TD>Short</TD><TD>Short</TD></TR>
+<TR><TD>3-14</TD><TD COLSPAN=2 ALIGN="CENTER">Factory Set</TD></TR>
+<TR><TD>4-13</TD><TD COLSPAN=2 ALIGN="CENTER">Factory Set</TD></TR>
+<TR><TD>5-12</TD><TD>Open</TD><TD>Open</TD></TR>
+<TR><TD>6-11</TD><TD>Open</TD><TD>Open</TD></TR>
+<TR><TD>7-10</TD><TD>Open</TD><TD>Short</TD></TR>
+<TR><TD>8-9</TD><TD>Short</TD><TD>Open</TD></TR>
+</COLGROUP></TABLE><P>
+
+Pin pairs 3-14 and 4-13 are set at the factory and the programming plug is properly configured for the drive in which it is installed. However, if you move programming plugs from drive to drive, there is a chance that the drive will not operate properly due to improper configuration of these pins. If you must replace a programming plug on a drive, refer to the chart below for proper configuration of pin pairs 3-14 and 4-13.<P>
+
+To use the chart, you must have the phase code of the disk drive. This is located on a label on the disk drive case.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=60% align="center">
+<COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER">
+<TR><TD WIDTH=20%></TD>
+<TD WIDTH=80% COLSPAN=4>Phase Code</TD></TR>
+<TR><TD>Pin Pair:</TD><TD>C</TD><TD>D</TD><TD>E</TD><TD>F</TD></TR>
+<TR><TD>3-14</TD><TD>Open</TD><TD>Open</TD><TD>Short</TD><TD>Short</TD></TR>
+<TR><TD>4-13</TD><TD>Open</TD><TD>Short</TD><TD>Open</TD><TD>Short</TD></TR>
+</COLGROUP></TABLE><P>
+&nbsp;<P>
+
+<B>FSB-Z100-033: New Drive Shields</B><P>
+
+Later production runs of the Z-110 Low-Profile series computers used different shields to provide greater vertical clearance for easier assembly.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-034: Z-120 Display Brightness</B><P>
+
+The HE 57-27 diode used at CR-107 on the video monitor boards of the Z-120 All-In-One model caused the brightness to change with temperature. This was especially noticeable in background raster brightness.<P>
+
+To correct this problem, replace the HE 57-27 diode at CR-107 with diode HE 234-353. This diode is faster and less sensitive to temperature variation.<P>
+
+Replacement of an HE 57-27 with an HE 234-353 at CR-107 will shift the power supply voltage more negative and will require readjustment of both R-139 "Brite" and R-148 "Focus" controls.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-035: Z-205 Configuration Help</B><P>
+
+In order to help clear up some misunderstandings about the Z-205, the following information will aid in setting up the proper configuration for any Z-100 use. <I>(FSB-S100-001 attempted further clarification and is incorporated in this discussion - ed.)</I><P>
+
+Later Z-205 boards used a different style DIP switch that caused additional confusion when configuring this card. Early manuals showed drawings of the earlier style DIP switches showing a "0" position, while the new DIP switches showed an "ON" (shorted) in this position. Looking at the component side of the Z-205 card, with the 100 pin connector at the bottom, the right side of the switches are "ON" and are shorted. For the discussion below, a "1" represents an open section.<P>
+
+The Main Board on the Z-100 must be fully populated with 192K RAM in order for any unmodified Z-205 card to function. The RAM located on the Main Board are Banks 0, 1, and 2.<P>
+
+The FIRST Z-205 card added becomes RAM Banks 3, 4, 5, and 6. SW1 is set to the address of 98h and since the first Bank on the card is 3, then SW2 is set to 03h (The suffix h stands for Hex). The settings are:<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=70% align="center">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="RIGHT"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="RIGHT"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="LEFT">
+<TR><TD WIDTH=30%>1st Z-205:</TD>
+<TD WIDTH=10%></TD><TD WIDTH=10%>SW2</TD><TD WIDTH=10%></TD>
+<TD WIDTH=10%></TD><TD WIDTH=10%>SW1</TD><TD WIDTH=10%></TD></TR>
+<TR><TD></TD><TD>0</TD><TD>*--</TD><TD></TD><TD>0</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD>SW2 = 03h</TD><TD>1</TD><TD>*--</TD><TD></TD><TD>1</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD>SW1 = 98h</TD><TD>2</TD><TD></TD><TD>--*</TD><TD>2</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>3</TD><TD></TD><TD>--*</TD><TD>3</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD>4</TD><TD></TD><TD>--*</TD><TD>4</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD>5</TD><TD></TD><TD>--*</TD><TD>5</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>6</TD><TD></TD><TD>--*</TD><TD>6</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>7</TD><TD></TD><TD>--*</TD><TD>7</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD>OFF</TD><TD>/ON</TD><TD></TD><TD>OFF</TD><TD>/ON</TD></TR>
+</COLGROUP></TABLE><P>
+
+Note: Position 0 on each switch is the LSB, therefore for SW1 to be 98h:<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER">
+<TR><TD Width=50%>Hex</TD><TD Width=25%>9</TD><TD Width=25%>8</TD></TR>
+<TR><TD>Binary</TD><TD>1001</TD><TD>1000</TD></TR>
+<TR><TD>SW1 positions:</TD><TD>7654</TD><TD>3210</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+The second Z-205 card installed has an address of 99h, having RAM Banks 7, 8, 9, and A. Since the first bank on the card is 7, then SW2 is set to 07h.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=70% align="center">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="RIGHT"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="RIGHT"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="LEFT">
+<TR><TD WIDTH=30%>2nd Z-205:</TD>
+<TD WIDTH=10%></TD><TD WIDTH=10%>SW2</TD><TD WIDTH=10%></TD>
+<TD WIDTH=10%></TD><TD WIDTH=10%>SW1</TD><TD WIDTH=10%></TD></TR>
+<TR><TD></TD><TD>0</TD><TD>*--</TD><TD></TD><TD>0</TD><TD></TD><TD>*--</TD></TR>
+<TR><TD>SW2 = 07h</TD><TD>1</TD><TD>*--</TD><TD></TD><TD>1</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD>SW1 = 99h</TD><TD>2</TD><TD>*--</TD><TD></TD><TD>2</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>3</TD><TD></TD><TD>--*</TD><TD>3</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD>4</TD><TD></TD><TD>--*</TD><TD>4</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD>5</TD><TD></TD><TD>--*</TD><TD>5</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>6</TD><TD></TD><TD>--*</TD><TD>6</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>7</TD><TD></TD><TD>--*</TD><TD>7</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD>OFF</TD><TD>/ON</TD><TD></TD><TD>OFF</TD><TD>/ON</TD></TR>
+</COLGROUP></TABLE><P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER">
+<TR><TD Width=50%>Hex</TD><TD Width=25%>9</TD><TD Width=25%>9</TD></TR>
+<TR><TD>Binary</TD><TD>1001</TD><TD>1001</TD></TR>
+<TR><TD>SW1 positions:</TD><TD>7654</TD><TD>3210</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+The third Z-205 card installed has an address of 9Ah, having RAM Banks B, C, D, and E. Since the first bank on the card is B, then SW2 is set to 0Bh.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=70% align="center">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="RIGHT"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="RIGHT"><COLGROUP ALIGN="CENTER">
+<COLGROUP ALIGN="LEFT">
+<TR><TD WIDTH=30%>2nd Z-205:</TD>
+<TD WIDTH=10%></TD><TD WIDTH=10%>SW2</TD><TD WIDTH=10%></TD>
+<TD WIDTH=10%></TD><TD WIDTH=10%>SW1</TD><TD WIDTH=10%></TD></TR>
+<TR><TD></TD><TD>0</TD><TD>*--</TD><TD></TD><TD>0</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD>SW2 = 0Bh</TD><TD>1</TD><TD>*--</TD><TD></TD><TD>1</TD><TD></TD><TD>*--</TD></TR>
+<TR><TD>SW1 = 9Ah</TD><TD>2</TD><TD>--*</TD><TD></TD><TD>2</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>3</TD><TD></TD><TD>*--</TD><TD>3</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD>4</TD><TD></TD><TD>--*</TD><TD>4</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD>5</TD><TD></TD><TD>--*</TD><TD>5</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>6</TD><TD></TD><TD>--*</TD><TD>6</TD><TD></TD><TD>--*</TD></TR>
+<TR><TD></TD><TD>7</TD><TD></TD><TD>--*</TD><TD>7</TD><TD>*--</TD><TD></TD></TR>
+<TR><TD></TD><TD></TD><TD>OFF</TD><TD>/ON</TD><TD></TD><TD>OFF</TD><TD>/ON</TD></TR>
+</COLGROUP></TABLE><P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=50% align="center">
+<COLGROUP ALIGN="LEFT"><COLGROUP ALIGN="CENTER"><COLGROUP ALIGN="CENTER">
+<TR><TD Width=50%>Hex</TD><TD Width=25%>9</TD><TD Width=25%>A</TD></TR>
+<TR><TD>Binary</TD><TD>1001</TD><TD>1010</TD></TR>
+<TR><TD>SW1 positions:</TD><TD>7654</TD><TD>3210</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+Note: The third card expansion may not provide expansion memory for all applications due to accessing the video RAM.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-036: Z-205 User Manual Corrections</B><P>
+
+Make the following corrections to the Z-205 User's Manual, part number 595-2990-01:<P>
+
+- Page 8: The 4th and 5th steps describing SW1 and SW2 are incorrect. See the following information for correct settings.<P>
+
+- Page 9: On Inset #1 there is a jumper displayed on J3. This jumper is not supposed to be there.<P>
+
+-- The pictorial for SW1 (switch on right side) is shown with the wrong switch settings.<P>
+
+- Page 11: Under SW1, the example shown is not representative of proper configuration necessary for the Z-100.<P>
+
+- Page 15: The FILL routine will only work with ROM versions 2.2 or later. For earlier version, one must use the CHKDSK utility.<P>
+
+- Page 16: Under "Final Configuration, Multi-card", correct the first statement to read as follows:<P>
+
+-- Set dip switch SW1 positions 7, 4, 3, and 0 to the <U>OFF (1) (LEFT)</U> position. Set all the others to the <U>ON (0) (RIGHT)</U> position.<P>
+
+- Add the following statement directly under the above correction:<P>
+
+-- Set dip switch SW2 positions 2, 1, and 0 to the <U>OFF (1) (LEFT)</U> position. Set all the others to the <U>ON (0) (RIGHT)</U> position.<P>
+
+This will allow a user to operate two or more Z-205 memory cards (256K) in a contiguous mode, allowing the full 768K memory addressing ability of the Z-100 series computers to be implemented.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-037: Z-120 All-In-One Video Problem</B><P>
+
+If the prompt appears in the upper right corner, the video is smeared, and/or the display is backwards, check for proper installation or operation of Q103 (HE 234-276) and replace as necessary.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-038: Interim Service Manual Schematic Update</B><P>
+
+On newer versions of the Z-100 main board, HE 181-4106, 181-4507, 181-4920, 181-5743, and higher, a section of U130 (443-1049) is inserted into the Refresh Timing and Arbitration circuit. This section of U130 replaces a section of U168 used on the old main boards (HE 181-3630). To update your MB3 schematics, refer to the pictorial below and draw in the section of U130.<P>
+
+<CENTER><IMG SRC="../images/ZFSB05.jpg" BORDER="0"></CENTER><P>
+&nbsp;<BR>
+
+<B>FSB-Z100-039: Schematic Corrections - U130</B><P>
+
+Please make the following changes to schematic MB3 in your Z-100 Interim Service Manual.<P>
+
+- Locate U130 in the Refresh Timing and Arbitration circuits (upper center of the schematic). Change the part number from HE 443-1039 to HE 443-1049.<P>
+
+- Locate U130 in the Refresh, Wait Timing & Error-Generation circuits (upper right of the schematic). Write "HE 443-1049" below the generic number (ALS37).<P>
+&nbsp;<P>
+
+<B>FSB-Z100-040: Z-217-1 Winchester Disk Controller Card<BR>
+IC Change at U41, U45, and U48</B><P>
+
+Because of the unavailability of parts, the 74ALS273 ICs at U41, U45, and U48 were changed to 74LS273 ICs. This was not a modification and older boards do not require this change.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-041: Z-207 Floppy Disk Controller Board; Precomp Will Not Adjust</B><P>
+
+If the pulse width at CP3 cannot be adjusted, or is missing, check for an open circuit to U3-17 or an open wiper at R3.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-042: Z-207 Floppy Disk Controller Card<BR>
+Schematic Corrections - U22 and RP3</B><P>
+
+On the Floppy Disk Controller schematic (#585-21) supplied with the Z-100 Series Technical Manual, the line marked "EARLY" on U22 should be pin 17 instead of pin 19.<P>
+
+On the yellow Floppy Disk Controller schematic supplied with the H/Z-100 Service Data Manual, the control connected to U3-17 should be marked R3 instead of RP3.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-043: Winchester Data Separator Card Shorts</B><P>
+
+When J4 is plugged into the data separator circuit board, the board may flex downward, shorting out the supply voltages.<P>
+
+To eliminate this problem, remove the data separator circuit board from the top of the drive brackets and install a piece of fish paper to the rear of the Winchester drive shield. Reinstall the data separator board.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-044: Z-120 Video Board</B><P>
+
+The video board for the Z-120 series microcomputers are close look-alikes to the Z-29's. They are not interchangeable! The correct P/N for the Z-120 is A-10520 or A-10648.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-045: Z-120 Video Deflector Board Insulators</B><P>
+
+The video deflection board insulators were lengthened in later Z-120 All-In-One models to eliminate the possibility of shorts occurring between the board and chassis.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-046: Z-100 Won't Start Up With Modem Connected.</B><P>
+
+Superseded by FSB-Z100-057.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-047: CP/M Won't Boot Properly</B><P>
+
+The 12H6 PAL IC (HE 444-128) at U186 on the motherboard has frequently caused the CP/M booting problems.<P>
+
+On the motherboard (HE 85-2653-1), check Y101 (10 MHz crystal, HE 404-645), for proper frequency and output. Also, check U210 (8085 CPU, HE 443-1010) for poor socket contact or defective IC.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-048: "Interrupt Circuit Error - U208" Displayed on Power Up<BR>
+or Appears Intermittently</B><P>
+
+On the motherboard, check the foil lead going to U114, pin 10. This foil is cut as a modification, but may not have been completely removed. A small piece of this foil might be touching U114, pin 7, causing the interrupt error.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-049: "Timer Error - U160" Displayed on Power Up<BR>
+or Appears Intermittently</B><P>
+
+On the motherboard, check U191 (4.00 MHz oscillator module, HE 150-132) for proper frequency and output.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-050: Z-120 Low Video Brightness</B><P>
+
+A defective U337 (HAL14H4, HE 444-115) or U329 (74SL174, HE 443-1053) on the video board may cause this problem.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-051: Z-120 Video Board Loads Motherboard</B><P>
+
+A defective U369 (82S129), HE 444-103), U370 (TBP18S22, HE 444-127), or U371 (82S129, HE 444-102) on the Z-120 video board may load down the motherboard.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-052: Drive Cross-Reference</B><P>
+
+Most Z-100 computers used a generic number for the drives installed. In later models, to ease identification of the drive(s) in each unit, a label was applied to the computer rear panel showing the last three digits of the drive part number, with the Winchester digits first.<P>
+
+"Drive Type 163" indicates an HE 150-163 drive is installed, while "Drive Type 156163" indicates an HE 150-156 Winchester and HE 150-163 floppy are installed.<P>
+
+A cross-reference of drive numbers is provided below. Any Z-100 series computer not having a drive code have an HE 150-142 floppy and/or an HE 150-156 Winchester.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=70% align="center">
+<TR><TD Width=25%>Drive</TD><TD Width=25%>Model</TD>
+<TD Width=25%>Upgrade</TD><TD Width=25%>Part</TD></TR>
+<TR><TD><U>Code:</U></TD><TD><U>Type:</U></TD>
+<TD><U> Kit: </U><TD><U>Number:</U></TD></TR>
+<TR><TD>156</TD><TD>Winc</TD><TD>Z-217-2</TD><TD>HE 150-156</TD></TR>
+<TR><TD>163</TD><TD>Flop</TD><TD>Z-207-7</TD><TD>HE 150-163</TD></TR>
+<TR><TD>164</TD><TD>Winc</TD><TD>Z-217-21</TD><TD>HE 150-164</TD></TR>
+<TR><TD>167</TD><TD>Winc</TD><TD> ----- </TD><TD>HE 150-167</TD></TR>
+<TR><TD>168</TD><TD>Flop</TD><TD>Z-207-71</TD><TD>HE 150-168</TD></TR>
+<TR><TD>169</TD><TD>Flop</TD><TD> ----- </TD><TD>HE 150-169</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+<B>FSB-Z100-053: Cabinet Cross-Reference</B><P>
+
+The cabinet parts for the Low Profile and All-In-One computers were standardized in later production. The old and new part numbers are listed below. Each new part was aluminized for RFI shielding.<P>
+
+<TABLE border=0 cellpadding="0" cellspacing="0" width=70% align="center">
+<TR><TD Width=25%>Cabinet</TD><TD Width=25%></TD>
+<TD Width=25%>Old</TD><TD Width=25%>New</TD></TR>
+<TR><TD><U>Part:</U></TD><TD><U>Model:</U></TD>
+<TD><U>Part #: </U><TD><U>Part #:</U></TD></TR>
+<TR><TD>Cover</TD><TD>LoPro</TD><TD>HE 92-758</TD><TD>HE 92-790</TD></TR>
+<TR><TD>Bottom</TD><TD>All</TD><TD>HE 92-759</TD><TD>HE 92-791</TD></TR>
+<TR><TD>Cover</TD><TD>AIO</TD><TD>HE 92-761</TD><TD>HE 92-792</TD></TR>
+<TR><TD>Center</TD><TD>AIO</TD><TD>HE 92-762</TD><TD>HE 92-793</TD></TR>
+</TABLE><P>
+&nbsp;<P>
+
+<B>FSB-Z100-054: Z-120 Video Monitor Board; Q401 Has Two Numbers</B><P>
+
+Q401 (HE 234-273) on the Z-120 video monitor board can be either type HE 121-1058 or HE 121-1034. Please note this in your Z-100 Service Data Manual, video monitor parts list, page 6-19, and on the schematic.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-055: New S-100 Card Cage Bracket</B><P>
+
+A universal card cage bracket accommodating both half-height and full-height drives was used in later models.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-056: Motherboard SW101 Has Two Styles</B><P>
+
+Newer (HE 181-4106) motherboards used a different style DIP switch at SW101 to permit machine insertion of the part.<P>
+&nbsp;<P>
+
+<B>FSB-Z100-057: Z-100/RS-232 Modification</B><P>
+
+A situation may occasionally be experienced with ZW-110/120 models that requires a modification to the RS-232 portion of the Main Board as follows:<P>
+
+- Symptom: Ports J1 and J2 do not function if modem is powered up prior to the Z-100 being powered up.<P>
+
+- Analysis: Some modems have been found to place a negative voltage on the +12 V line from U228 on the motherboard. This keeps the +12v regulator from turning on and the DTR line is in a transition state between On and Off.<P>
+
+- Solution: Install a diode, P/N HE 56-89, across C203 on Main Board. Note: The S-100 card cage should be removed prior to the installation of the diode. It is recommended to install the diode on the component side. The diode was installed in production models as of August 1, 1983.<P>
+
+<I>(Surprisingly, my newer motherboards, HE 181-5743, stamped 85-2806-1 in the center, did not have this modification, but I have no idea as to their date of manufacture - ed.)</I><P>
+&nbsp;<P>
+
+<B>Some other miscellaneous Field Service Bulletins that may be of interest:</B><P>
+
+<B>FSB-DK-024: Z-207-41/42 8" Drive Configuration</B><P>
+
+Some confusion has arisen on the proper positioning of the MT/SR jumper on the 8" floppy disk drives. When using the disk system with ZDS computers, make sure the jumper is in the MT position. Also make sure the software you are using meets this criteria: Z-DOS BIOS version 1.10, Format version 1.6 or higher, and/or CP/M 2.2.101 or higher. The use of older software will cause incompatibility with the disk drive jumpering and BDOS and/or Format errors will result.<P>
+&nbsp;<P>
+
+<B>FSB-DK-025: H/Z-207 Erratic Write Operation</B><P>
+
+Circuit board #85-2807 for the H/Z-207 included base resistors for Q2 and Q3 to eliminate any write irregularities. On older boards, if replacing Q2 and Q3 (#417-937) does not correct the problem, install a 100 ohm resistor in series with the base lead of Q2 and Q3. Install the resistors only when needed.<P>
+&nbsp;<P>
+
+<B>FSB-DK-027: Z-207 Controller Errors</B><P>
+
+If "Device Controller Error" is presented or there is no prompt, check DS1 (HE 60-621) for incorrect markings. A number of switches have been found to be mismarked, or assembled with the cover upside down. A quick check is to check continuity of each section. When DS1 is set as required, sections 0-3 and 6 should be shorted when positioned toward the bottom of the board; all others open.<P>
+
+If the Z-207 controller will boot CP/M 85 and 86, but gives an I/O error for Z-DOS, check U31 (74LS365A, HE 443-1039) for a defective gate; also DS1 (HE 60-621) for switch "0" in the wrong position or open.<P>
+&nbsp;<P>
+
+<B>FSB-GEN-021: Winchester Notes</B><P>
+
+The following are general information notes that may help you solve problems and understand the product better.<P>
+
+- When the winchester drive is replaced, it first has to be prepped. After prep is completed there is a 50% ZDOS and a 50% CP/M partition set up on the disk. Perform a CTRL-RESET on the machine, boot up on the winchester, and the response will be a Hand Prompt on the screen with no message. This response means 1) prep worked, 2) the disk can be written to, 3) the disk can be read. Therefore the winchester drive is good.<P>
+
+- Under software control, the prep utility will keep track of the bad sectors. The maximum allowable bad sector count is 168.<P>
+
+- If excessive soft errors are encountered on a system that works satisfactorily (it preps, reads, writes, etc.), the problem usually will be alignment of the Data Separator card. This card requires a scope with a 350 MHz bandwidth to perform the alignment.<P>
+
+- Be careful when reconnecting the cables to the Winchester controller card. If the leftmost ribbon connector is misconnected to the left, then a transistor located directly to the right of the connector, Q101, will be blown. If this happens, it will not be possible to initialize or write to the winchester drive and under ZDOS there will be write error messages, and under Prep there will be a "Track Zero Has Bad Sectors" message.<P>
+
+- If a problem develops in a system and gives parity or Bus error messages, and dumps registers of the 8088 to the Bus; or if there is a total lock-up of the system (dies for no apparent reason); either of these symptoms can be caused by a faulty pair of PAL ICs, U28 and U29, in the lower left area of the controller card.<P>
+&nbsp;<P>
+
+<B>FSB-MON-002: ZVM-124 Monitor Servicing</B><P>
+
+The ZVM-124 is the same monitor as the ZVM-122/123 but is painted to match the IBM colors. For service information, refer to the SM-ZVM-122/123 service manual.<P>
+&nbsp;<P>
+
+<B>FSB-MON-004: ZVM-135 Color Monitor w/Dark Vertical Band</B><P>
+
+If a dark vertical band, approx 1/2" wide, develops on the CRT's left edge, it may be caused by the CRT's blanking signal. If this problem appears, perform the following modification:<P>
+
+- Remove the 9-227 module and replace R3473 (3.9K) with a 10K resistor. Reinstall the 9-227 module.<P>
+
+- Adjust for proper width and centering by filling the screen with characters, either with the Z-100 monitor ROM Fill command or using a BASIC program, then:<P>
+
+-- Turn the G2 control up to view the retrace lines,<BR>
+-- Adjust the width control until the black bar disappears to the left side,<BR>
+-- Adjust the Centering until the right side of the screen pattern is on the screen, otherwise 0% over-scan.<BR>
+-- Turn the G2 control for normal viewing.<P>
+
+NOTE: Do this modification whenever a Toshiba CRT is replaced with a Zenith CRT.<P>
+
+--- Steve Vagts, Editor, <I>"Z-100 LifeLine"</I>
+</FONT></TD></TR>
+
+</table>
+</td></tr>
+
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<img src="../images/bar.jpg" hspace="0" vspace="0" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<A HREF="mailto:z100lifeline@earthlink.net"> <img src="../images/email.jpg" HSPACE="0" VSPACE="0" BORDER="0"></A><P><A HREF="mailto:z100lifeline@earthlink.net"><FONT FACE="Verdana, Arial" SIZE="4">z100lifeline@earthlink.net</FONT></A>
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<P>
+<table>
+<tr><td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../index.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../index.html"> HOME Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../lifeline.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../lifeline.html"> LifeLine Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../z100.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../z100.html"> Z-100 Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../repair.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../repair.html"> Repair Page</A>
+</FONT></td>
+
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td>&nbsp;</td><td align=center><center>
+<table>
+<TR><TD VALIGN="top" ALIGN="center" WIDTH="370">
+<FONT SIZE="-2">
+Copyright &copy; 2007, Steven W. Vagts<BR>
+Revised -- September 07, 2007
+</FONT></TD>
+
+</TR>
+</TABLE>
+</center>
+</td></tr>
+</table>    
+</BODY></HTML>

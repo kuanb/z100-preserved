@@ -1,0 +1,266 @@
+<HTML>
+<HEAD>
+<TITLE>Z-207 Barfield Mod</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/tile_sidebar.jpg" VLINK="#ff00ff" LINK="#4000ff" ALINK="#4000ff" TEXT="#000000">
+
+<BASEFONT FACE="Verdana, Arial" SIZE="2">
+
+<table border=0 cellpadding=10 cellspacing=0 width=100% align=left>
+<!-- This table is for the entire document! -->
+<tr><!-- This is the first row of the table; sets top margin. -->
+ <td valign="middle" align="left"></td>
+
+<td width=90% align=center>
+<!-- This <td> sets the left margin for the border. -->
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<!-- This table is the title of the page. -->
+<TR>
+<TD WIDTH=100% ALIGN=center VALIGN=middle>
+&nbsp;<P>
+<FONT FACE="Verdana, Arial" SIZE=5>
+<B>Z-207 FDD Controller Barfield Mod<P></B></FONT>
+&nbsp;<P></TD></TR>
+</TABLE>
+<img src="../images/bar.jpg" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td>
+<td align="center" valign="middle">
+<table border=0 cellpadding=10 cellspacing=0 width=100%>
+<!-- This table contains ALL the graphics and text blocks. -->
+
+<TR><TD ALIGN=left><FONT FACE="Verdana, Arial" SIZE=2>
+<B>General Note:</B> This article was originally published as an insert to issue #76,
+July-August 2001, of the <B><I>"Z-100 LifeLine"</I></B>. The information regarding the DIP switch has been updated to reflect continuing changes to the BIOS.<P>
+&nbsp;<P>
+
+<CENTER><B>WARNING:</B> The following modification requires some knowledge of<BR>
+electronics and soldering skills! Try this <B>ONLY AT YOUR OWN RISK</B>!</CENTER><P>
+&nbsp;<P>
+
+<CENTER><B>Z-207 Floppy Controller Modifications</B> by Steven W. Vagts, Editor, <I>"Z-100 LifeLine"</I></CENTER><P>
+
+<B>Background:</B><P>
+
+The Z-207 floppy disk controller has two physically different connectors for the standard density drives of the period: the large 8" drives using a 50-pin cable and a 500 KHz transfer rate, and the standard dual sided, double density (DSDD) 5-1/4" drive using a 34-pin cable with a 250 KHz transfer rate.<P>
+
+The two connectors on the Z-207 floppy controller had several other differences besides the number of pins.<P>
+
+- There are separate buffers and drive select decoders. The Z-207 has a density select signal labeled: 8"/5". A high logic level for this signal tells the board that it is using high density drives and enables the data buffers and decoders that go to the 50-pin connector. When the 8"/5" signal is low, the data buffers and decoders of the 34-pin connector are enabled.<P>
+
+- There is also circuitry on the Z-207 which determines the speed at which data transfer occurs. The 8"/5" signal is used to select this data transfer rate.<P>
+
+The standard Z-207 was capable of using 96 tpi or 48 tpi 5-1/4" drives by DIP switch selection, but the drives could not be mixed. And numerous new floppy disk types emerged over the years, leaving Z-100 owners clammering for more capability.<P>
+
+Basically, with the stock Z-207 controller board, if you wanted to use the new high density drives, including 3-1/2" and a very wide selection of formats, some of which were very unique, you had to use "DiskPack" (a floppy disk device driver by William Flanagin and distributed by Paul F. Herman, Inc.). A modified cable was necessary to adapt the 50-pin connector signals for the 34-pin drive connectors.<P>
+
+Then, MS-DOS version 4.x came on the scene, offering another option by providing the software support needed to accommodate the more popular drives of the period. And the hardware modifications needed were already developed. Our humble Z-207 Floppy Disk Controller, with modifications, is up to the task!<P>
+
+Using Dual Density Drives on the Z-100:<P>
+
+Issue #13 of the Z-100 LifeLine published the first official modification to the floppy card. Called the "Hughes" Mod, after its developer, Jim Hughes of Houston, Texas, it made maximum use of Bill Flanagin's DiskPack program, which provided all the popular PC disk formats, plus a few of its own.<P>
+
+Essentially, it provided the means to use dual density floppy drives (i.e., 3-1/2" 1.4Mb/720Kb or 5-1/4" 1.2Mb/360Kb drives). It did have its limitations, however.<P>
+
+- The 50-pin connector was essentially disabled, therefore losing the capability to use 8" drives.<BR>
+- You were limited to four drives per controller card.<BR>
+- Some drive combinations would not work correctly. Some drives required that pin 2 of the 34-pin connector be converted to a density select signal, while some other drives would not allow that.<P>
+
+About the same time this modification was published, Travis Barfield also submitted a modification that used the 5" FASTEP signal (controllable by writing to a port) as a density select signal, allowing the 8"/5" signal to select the appropriate connector and continued use of the 8" drives.<P>
+
+At the time, this would have required a change to the DiskPack Software, which could not be done easily at that time.<P>
+
+Changes made to the Z-100 Monitor ROM and the new BIOS with MS-DOS v4.01 for the Z-100, provided the necessary software changes to support this better Z-207 modification.<P>
+
+While the modification was fully described in issue #29, I'm republishing this information because of its importance and for those who may not have that issue available.<P>
+&nbsp;<P>
+
+<B>A Better Mousetrap!</B><P>
+
+In order to use this Z-100 Z-207 modification to support dual density drives, you must use the new MS-DOS v4.01 or later (Select the Barfield Z-207 Mod in DRIVECFG). Also, DiskPack is no longer required.<P>
+
+The modified Z-207 card will still work normally with earlier versions of DOS, and other operating systems like CP/M, but your dual density drives will not work correctly.<P>
+
+This modification is simple to perform, but some soldering skills are required. The only soldering to the board is at pin 2 of the 34-pin drive connector, so this modification is completely reversible.<P>
+
+You will need four (4) 14-pin DIP sockets, plus some small guage insulated hook-up wire. If you don't have the sockets, the mod can be done by carefully soldering directly to the integrated circuits. The ICs involved are still readily available, if you need spares.<P>
+
+First we must perform the Z-207 Floppy Disk Controller 5.25" Faststep Modification to allow the controller to automatically switch between standard and high density modes.
+&nbsp;<P>
+
+<B>Figure Notes:</B><P>
+
+1. Pins shown with a box outside the IC outline are bent out and MUST NOT make contact with the existing socket pin.<P>
+
+2. Connections shown directly into the IC pin MUST insert into the existing IC socket pin.<P>
+
+3. If not using the sockets, configure the IC itself the same way as the socket pins shown here.<P>
+
+To make use of this modification, BIOS modification or BIOS v4.xx or later is required!<P>
+
+<CENTER><IMG SRC="../images/Z207_1.jpg" BORDER="0"><BR>
+
+Figure 1.<BR>
+5.25" Faststep Modification<P>
+&nbsp;<P>
+
+<IMG SRC="../images/Z207_2.jpg" BORDER="0"><BR>
+
+Figure 2.<BR>
+3.5"/5.25" Dual Density Drive Select<P></CENTER>
+&nbsp;<P>
+
+Remove the Z-207 floppy controller board from your Z-100, using the procedures provided in your User's Manual.<P>
+
+Referring to Figure 1, please follow these steps:<P>
+
+[  ] 1. Cut a piece of wire 2-1/4" long and strip 1/8" of insulation from each end.<BR>
+Solder one end of this wire to pin 8 of one of the new 14-pin sockets. Keep the wire<BR>
+on the leg as close to the socket body as possible.<P>
+
+[  ] 2. Remove IC U14 (74LS74) from the Z-207 board. In its place install the new IC<BR>
+socket you prepared in step #2. Reinstall the 74LS74 chip back into the piggy-backed<BR>socket. Check the proper orientation of pin #1 for both the socket and the IC.<P>
+
+[  ] 3. Bend out pin 12 of one of the new 14-pin sockets. Remove IC U4 (74LS74) from<BR>
+the Z-207 board and install the new socket in its place, leaving pin 12 sticking out<BR>
+to the side.<P>
+
+[  ] 4. Connect the other end of the wire coming from pin 8 of U14 to the bent out<BR>
+pin 12 of the U4 socket. Do not solder this connection yet.<P>
+
+[  ] 5. Cut a piece of wire 8-1/2" long and strip 1/8" of insulation from each end.<BR>
+Connect one end of this wire to pin 12 of the U4 socket. Now solder both wires at<BR>
+pin 12.<P>
+
+[  ] 6. Reinstall the 74LS74 chip back into the piggy-backed socket at U4. Recheck<BR>
+the proper orientation of pin #1 for both the socket and the IC.<P>
+
+[  ] 7. Bend out pin 1 on one of the new 14-pin sockets. Remove IC U11 (7417) from<BR>
+the Z-207 board and install the new socket in its place, leaving pin 1 bent out to<BR>
+the side.<P>
+
+[  ] 8. Solder the other end of the 8-1/2" wire coming from pin 12 of U4 to the bent<BR>
+out pin 1 of the U11 socket.<P>
+
+[  ] 9. Reinstall the 7417 chip back into the piggy-backed socket at U11. Recheck<BR>
+the proper orientation of pin #1 for both the socket and the IC.<P>
+&nbsp;<P>
+
+
+Next we must perform the Z-207 Floppy Disk Controller Board 3.5"/5.25" Dual Density Select Modification. This will allow the controller to notify the respective drive that it should use standard or high density mode, based on the level of pin 2 of the 34-pin drive connector. It also signals 5-1/2" dual density drives to switch speeds between 300 rpm and 360 rpm.<P>
+
+[  ] 10. With a sharp knife or razor blade, carefully whittle away the plastic<BR>
+around pin 2 of the 34-pin connector. See Figure 3.<P>
+
+<CENTER><IMG SRC="../images/Z207_3.jpg" BORDER="0"><BR>
+
+Figure 3.<BR>
+Pin 2 of the 34-Pin Connector<P></CENTER>
+
+[  ] 11. Cut a piece of wire 5-1/4" long. Strip 1/8" of insulation from one end and<BR>
+1/4" from the other.<P>
+
+[  ] 12. Carefully solder the 1/4" stripped end of the 5" wire to this prepared pin 2<BR>
+of the 34-pin connector.<P>
+
+[  ] 13. Solder the other end of the 5" wire coming from pin 2 to pin 12 of the<BR>
+remaining new 14-pin socket. Keep the wire on the leg as close to the socket body<BR>
+as possible.<P>
+
+[  ] 14. Remove IC U7 (74LS33) from the Z-207 board. In its place install the new<BR>
+socket you just prepared. Plug the same 74LS33 chip into the piggy-backed socket at<BR>
+U7. Recheck the proper orientation of pin #1 for both the socket and the IC.<P>
+
+[  ] 15. Carefully inspect the ICs and sockets to ensure that all pins, except pin #12<BR>
+of U4 and pin #1 of U11 are properly seated and not bent under.<P>
+
+[  ] 16. Carefully dress the wires close to the board and around the other ICs.<BR>
+Secure with tape or daps of glue.<P>
+
+[  ] 17. This completes the 5" Faststep Dual-Density Select modification.<P>
+
+If you are also doing the Z-207 Throughput Modification, proceed to that section.<BR> Otherwise, reinstall the Z-207 Floppy Disk Controller Board and re-assemble the<BR>
+Z-100 in reverse order of disassembly, making careful checks at each step for<BR>
+properly inserted connectors, pinched leads, etc.<P>
+&nbsp;<P>
+
+<B>Setting Z-207 DIP Switches</B><P>
+
+The Z-207's DIP Switch is used to set both the port address and whether a drive requires double-stepping (to do 40 tracks on an 80 track drive). The old BIOS (pre-DOS version 4) only supported either 40 (48 tpi) track drives or 80 (96 tpi) track drives, but NOT both.<P>
+
+The new BIOS supports both and permits us to boot from any of the drives and other devices. See Figure 4 for a full explanation of the Z-207 Controller Card's DIP switch settings.<P>
+
+Run DRIVECFG to tell BIOS what each drive is; LD (Low Density), DD (Dual Density), or HD (High Density).<P>
+
+
+Please NOTE:<P>
+
+- Dual Density Drives count as High Density for these settings.<P>
+
+- By design, early DOS v4's BIOS required that the High or Dual Density drives occupy the lowest drive select numbers! This could leave your primary Boot 360 Kb drive set as DS4! But, this drive could still be set by DRIVECFG to Drive A:! With BIOS v4.06 and later, the BIOS no longer cares what mix of 48 and 96 tpi drives are installed, nor in what order.<P>
+
+<IMG SRC="../images/Z207_4.jpg" BORDER="0"><BR>
+
+<CENTER>Figure 4.<BR>
+Z-207 Floppy Disk Controller Board DIP Switch Settings<P></CENTER>
+
+</FONT></TD></TR>
+
+</table>
+</td></tr>
+
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<img src="../images/bar.jpg" hspace="0" vspace="0" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<A HREF="mailto:z100lifeline@earthlink.net"> <img src="../images/email.jpg" HSPACE="0" VSPACE="0" BORDER="0"></A><P><A HREF="mailto:z100lifeline@earthlink.net"><FONT FACE="Verdana, Arial" SIZE="4">z100lifeline@earthlink.net</FONT></A>
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<P>
+<table>
+<tr><td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../index.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../index.html"> HOME Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../lifeline.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../lifeline.html"> LifeLine Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../z100.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../z100.html"> Z-100 Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../repair.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../repair.html"> Repair Page</A>
+</FONT></td>
+
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td>&nbsp;</td><td align=center><center>
+<table>
+<TR><TD VALIGN="top" ALIGN="center" WIDTH="370">
+<FONT SIZE="-2">
+Copyright &copy; 2007, Steven W. Vagts<BR>
+Revised -- September 07, 2007
+</FONT></TD>
+
+</TR>
+</TABLE>
+</center>
+</td></tr>
+</table>    
+</BODY></HTML>

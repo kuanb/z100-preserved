@@ -1,0 +1,598 @@
+<HTML>
+<HEAD>
+<TITLE>Z-207 Floppy Controller Calibration</TITLE>
+</HEAD>
+<BODY BACKGROUND="../images/tile_sidebar.jpg" VLINK="#ff00ff" LINK="#4000ff" ALINK="#4000ff" TEXT="#000000">
+
+<BASEFONT FACE="Verdana, Arial" SIZE="2">
+
+<table border=0 cellpadding=10 cellspacing=0 width=100% align=left>
+<!-- This table is for the entire document! -->
+<tr><!-- This is the first row of the table; sets top margin. -->
+<td valign="middle" align="left"></td>
+
+<td width=90% align=center>
+<!-- This <td> sets the left margin for the border. -->
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<!-- This table is the title of the page. -->
+<TR>
+<TD WIDTH=100% ALIGN=center VALIGN=middle>
+&nbsp;<P>
+<FONT FACE="Verdana, Arial" SIZE=5>
+<B>Z-207 Floppy Controller Troubleshooting<P></B></FONT>
+&nbsp;<P></TD></TR>
+</TABLE>
+<img src="../images/bar.jpg" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td>
+<td align="center" valign="middle">
+<table border=0 cellpadding=10 cellspacing=0 width=100%>
+<!-- This table contains ALL the graphics and text blocks. -->
+
+<TR><TD ALIGN=left><FONT FACE="Verdana, Arial" SIZE=2>
+<B>General Note:</B> This article was published in the March-April 2005 issue of the <B><I>"Z-100 LifeLine"</I></B>, issue #98.<P>
+
+<B>WARNING:</B> The following fix requires some knowledge of electronics
+and soldering skills! Try this <B>ONLY AT YOUR OWN RISK</B>!<P>
+
+<B>WARNING:</B> All-In-One users MUST KEEP CLEAR of the CRT power cables, the CRT second anode (the thick single cable going to the top of the CRT) and the high voltage transformer on the vertical video board during computer operation. Voltages in these locations are <B>DANGEROUS</B>.<P>&nbsp;<P>
+
+
+<CENTER><B>Z-207 Floppy Controller Troubleshooting</B><BR></CENTER>
+<CENTER>by Steven W. Vagts, Editor, <I>"Z-100 LifeLine"</I></CENTER><P>
+
+In addition to the typical part failure experienced by any electronic product, the Floppy Disk Controller is subject to drift caused by aging parts on the card. If you are experiencing increasing read/write errors, but the card is still working, it might be prudent to have the card recalibrated by someone with the tools to perform that function or you may attempt to apply the following troubleshooting procedures.<P>
+
+The following information is compiled from the Z-100 Technical Manual, the Floppy Disk Controller Card Model H-207 Assembly Manual, and personal experience. The intent of this article is to provide troubleshooting information for those wishing to repair their own Floppy Disk Controller Card. However, please understand that there is a risk to further damaging your controller and your computer. Please proceed only at your own risk.<P>&nbsp;<P>
+
+
+<B>Troubleshooting Chart</B><P>
+
+<B>PROBLEM:</B> Drive access light does not turn on when a diskette is booted.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Check for proper connections of the floppy cable inside the computer,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;paying particular attention to the location of pin 1 and the red edge of<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the ribbon cable.<BR>
+2. Remove and reseat the Disk Controller in the S-100 bus connector.<BR>
+3. Check the S-100 pins for corrosion. Use a pencil eraser to gently<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;remove any dirt or staining from the gold fingers. CAUTION: Do not<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;remove any more material than necessary.<BR>
+3. Be sure the DIP switch on the Disk Controller is set to the correct<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;address. See the section H/Z-207 Port Address below.<BR>
+4. Check the connector positions on P1 or P2 on the Disk Controller.<BR>
+5. Be sure the drive is properly jumpered for unit 0 or 1 as appropriate.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> All diskette access lights turn on and remain on.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Drive cable is connected with the marked edge on the wrong side.<BR>
+2. Drive(s) configured incorrectly.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Two drives turn on when a boot operation is selected.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. The two drives have their selection jumpers programmed the same.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Computer will not accept a boot command, returns to hand prompt, or starts to boot, but freezes and requires reset.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Be sure diskette is bootable.<BR>
+2. Be sure diskette is installed in selected drive before boot<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;command is given.<BR>
+3. Be sure DIP switch on Disk Controller is set at the correct address.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;See the section H/Z-207 Port Address below.<BR>
+4. Be sure drives are properly jumpered.<BR>
+5. Be sure DIP switch bits 0 and 1 are selected for the type of drive<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;being used. <B>NOTE:</B> This is not applicable to MTR-ROM v4.3 and later.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Upon Power Up, the message "Primary Z207 Controller Error" or "Device Controller Error" is displayed before the hand prompt.<P>
+
+<B>PROBABLE CAUSE:</B><P>
+
+1. The controller card of the Default Boot Device is not installed,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;or has a failure.<BR>
+2. Check the positions of the S101 DIP switch on the motherboard.<BR>
+3. Check DS1 on the Disk Cntroller for incorrect settings or markings.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;A number of switches have been found to be mismarked, or assembled<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;with the cover upside down. A quick check is to check continuity of<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;each section. When DS1 is set as required, sections 0-3 and 6 should<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;be shorted when positioned toward the bottom of the board.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Capacitor C35 fails on 85-2807-1 model Disk Controller cards.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. According to Field Service Bulletin FSB-Z100-31, if the Disk Controller<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;has the model number "85-2807-1" printed in the lower left corner of the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;board, the silk screen of the board is printed WRONG and capacitor C35<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;is installed reversed. Replace the capacitor with the "+" toward the left.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> The disk drive does not stop running or runs longer than about
+20 seconds after the last access.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Check and/or replace C30, a 47 uF, 6v capacitor in the one-shot time<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;out circuit. To reduce the run time, a 20 uF capacitor will time out<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;in about 9 seconds.<BR>
+2. Check for model "#85-2807-3" in the lower left corner. If the board is<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;a -3 model, the silk screen of C30 is WRONG! Remove C30 and reinstall<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;with the positive "+" sign toward resistor R20, which connects to +Vcc.<BR>
+3. If operating at 8+ MHz CPU speeds, replace U15 N9202N integrated circuits<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;with faster 92LS02 chips.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> The computer is reporting soft read/write errors.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Aging parts on the Disk Controller may have drifted off calibration.<BR>
+2. Precompensation failure. See the next two problems for further checks.<BR>
+3. Early Disk Controllers may have a 10uF capacitor at C6.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;This was increased by FSB-Z100-016 to 33uF in later models to<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;reduce soft errors. NOTE: All 85-2807-2 and -3 models already<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;have this modification.<BR>
+4. According to FSB-Z100-024, soft errors may be reduced by connecting<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;a 10 uF capacitor in parallel with the 0.1 uF capacitor at C32,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;located just above the controller chip U22. Be sure the positive "+"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;lead of the 10 uF capacitor is positioned to the left when facing the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;component side of the board. NOTE: All 85-2807-2 and -3 boards already<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;incorporate this modification as a separate capacitor at location C32-1.<BR>
+5. According to FSB-Z100-019, floppy disk errors in a Z-120 All-in-One may<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;occur when a hard drive is mounted above the floppy drive, causing EMI<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;radiating from the hard drive to affect the floppy disk drive. Check to<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ensure a shield is installed between the two drives in this configuration.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> FORMAT verification fails after track 23 on 5" drives; after
+track 43 on 8" drives.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Failure in the Precompensation Circuit.<BR>
+2. The Disk Controller needs calibration.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Precompensation will not adjust.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. According to Field Service Bulletin Z100-041, if the pulse width at<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;CP3 cannot be adjusted, or is missing, check for an open circuit to<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;U3-17 or an open wiper at R3.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Erratic Write Operation<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. According to FSB-DK-025, early model #85-2807 boards did not include<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;base resistors for the Q2 and Q3 transistors. To eliminate write<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;irregularities, the newer models included 100 ohm resistors in series<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;with the base lead of Q2 or Q3. The bulletin says to install the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;resistors only when needed.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> Running DIAG, the Heath/Zenith Diagnostics Program, shows a
+Head Load Time Error and suggests checking U33 and U15.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. Replace U33 and U15 as recommended.<BR>
+2. Replace C48, located between U15 and U21, which controls the timing<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for this circuit. This is a 1.0 uF capacitor of a type with a known<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;history of problems; for me at least.<P>&nbsp;<P>
+
+
+<B>PROBLEM:</B> CP/M will boot from a floppy, but Z-DOS gives an I/O error.<P>
+
+<B>POSSIBLE CAUSE:</B><P>
+
+1. According to FSB-DK-027, check U31 (74LS365A, #443-1039) for a<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;defective gate.<BR>
+2. Check DS1 switch section "0" in the wrong position or open.<P>&nbsp;<P>
+
+
+<B>Calibration Procedures</B><P>
+
+<B>Equipment Needed:</B><P>
+
+You will need the following equipment to most precisely calibrate your
+Disk Controller Card:<P>
+
+&nbsp;&nbsp;&nbsp;* A digital voltmeter (DVM) with at least a four-digit readout.<BR>
+&nbsp;&nbsp;&nbsp;* A 10 MHz bandwidth, calibrated, laboratory-quality oscilloscope<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with a sweep speed of 50 ns/division and a vertical deflection<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of 2 V/division, and a low capacitance (X10) probe.<BR>
+&nbsp;&nbsp;&nbsp;* A frequency counter capable of six-digit accuracy at 4 MHz.<BR>
+&nbsp;&nbsp;&nbsp;* A blank 8" diskette (or a 5.25" diskette if you are using only<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.25" drives in your system).<P>
+
+<B>NOTE:</B> The H-207 Assembly Manual provided a simple circuit for calibrating
+the Disk Controller kits. It is provided toward the end of this article.<P>
+
+
+<CENTER><IMG SRC="../images/Z207Cal01.jpg" BORDER="0"></CENTER><P>&nbsp;<P>
+
+
+<B>Precompensation Calibration</B><P>
+
+Write precompensation corrects for "bit shift" distortion. This bit shift can be seen electronically when you read a data stream from a diskette. Data pulses which are recorded close together when read back, appear to spread apart. Precompensation advances or retards the data pulses as they are written so the pulses are properly spaced when read back off the diskette.<P>
+
+All Heath/Zenith 5-1/4", 48 tpi, floppy disk drives require 120 ns of precompensation on tracks greater than 23. Also, all Heath/ Zenith 8" and 5-1/4" 96 tpi drives require 120 ns of precompensation on tracks greater than 43.<P>
+
+Usually, two values of precompensation are needed: one for 5.25" drives and one for 8" drives. Accordingly, there are two precompensation adjustments on the Disk Controller Card. Potentiometer <B>R3 (PRECMP1)</B> is used to set the lower value of precompensation and potentiometer <B>R4 (PRECMP2)</B> is used to set the higher value of precompensation. Pictorial 1 shows the locations of these potentiometers.<P>
+
+Jumper J2 selects whether the 5.25" or the 8" drive will receive the lower value of precompensation. Pictorial 1 shows the location of J2 on the Card.<P>
+
+While referring to Pictorial 1, perform the calibration as follows:<P>
+
+1. Locate <B>R3</B> and <B>R4</B> on the Disk Controller Card.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Turn <B>R3</B> fully counterclockwise and R4 fully clockwise.<P>
+
+2. Insert the Disk Controller into the S-100 bus.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Turn the power on and wait five minutes to reach operating temperature.<P>
+
+3. Attach the oscilloscope's probe to <B>CP3</B> and the probe's ground clip to <B>GND</B>.<P>
+
+4. Determine the values of write precompensation that the 5.25" and 8"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;drives need from the drive's documentation. H/Z floppy drives all<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;require 120 ns of write precompensation. If the value of precompensation<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;is higher for the 5.25" drives, or if you only have 5.25" drives,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;go to Step 7. If the value of precompensation is higher for the 8"<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;drives, or if you have only 8" drives, go to Step 5.<P>
+
+5. Format a blank 8" diskette in any of the 8" drives by running FORMAT.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;While FORMAT is running, turn <B>R3 (PRECMP1)</B> to adjust the pulse width<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;displayed on the oscilloscope to the value of write precompensation<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;needed by your 8" drives. Restart FORMAT as needed until you are<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;satisfied with the adjustment. If you do not have 5.25" drives, you<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;have completed the precompensation calibration; proceed to "Data<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Separator Calibration". If you do have 5.25" drives, continue with<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the next step.<P>
+
+6. Format the 5.25" diskette. While FORMAT is running, turn <B>R4 (PRECMP2)</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;to adjust the pulse width displayed on the oscilloscope to the value<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;of write precompensation needed by your 5.25" drives. Restart FORMAT<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;as needed. Proceed now to Step 11.<P>
+
+7. If you have both 5.25" and 8" drives, perform the next step.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;If you have 5.25" drives only, go to Step 9.<P>
+
+8. Cut the foil on the circuit board that connects the middle hole of<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<B>J2</B> to the <B>"8<5"</B> hole.<P>
+
+9. Format a blank 5.25" diskette in any of the 5.25" drives using FORMAT.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;While FORMAT is running, turn <B>R3 (PRECMP1)</B> to adjust the pulse width<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;displayed on the oscilloscope to the value of write precompensation needed<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;by your 5.25" drives. Restart FORMAT as needed until you are satisfied<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;with the adjustment. If you do not have 8" drives, you have completed<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the precompensation calibration; proceed to "Data Separator Calibration".<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;If you do have 8" drives, go to the next step.<P>
+
+10. Format the blank 8" diskette. While FORMAT is running, turn <B>R4 (PRECMP2)</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to adjust the pulse width displayed on the oscilloscope to the value of<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write precompensation needed by your 8" drives. Restart FORMAT as needed.<P>
+
+11. Remove the oscilloscope probe.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This completes the precompensation calibration.<P>&nbsp;<P>
+
+
+<B>Data Separator Calibration</B><P>
+
+While referring to Pictorial 1, perform the calibration as follows:<P>
+
+1. Turn the computer on and wait five minutes to reach operating temperature.<P>
+
+2. Make sure the disk drives are not selected.<P>
+
+3. Set the DVM's voltage range to 2 Vdc and attach the common lead to GND<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;and the positive lead to CP2.<P>
+
+4. Adjust <B>R2 (BIAS)</B> for a reading of 1.400 Vdc.<P>
+
+5. Remove the voltmeter test leads.<P>
+
+6. Set the six-digit frequency counter to count 4 MHz.<P>
+
+7. Attach the shield lead to <B>GND</B> and the signal lead to <B>CP1.</B><P>
+
+8. Adjust <B>R1 (FREQ)</B> for a reading of 4.000 MHz.<P>
+
+9. Repeat Steps 2 through 8 until there is no further improvement and<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the 1.4 Vdc and 4 MHz readings occur simultaneously. There will be<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;some (but not much) interaction between these adjustments.<P>
+
+10. Remove the test leads and turn the computer off.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This completes the calibration procedure.<P>
+
+<B>NOTE:</B> Format the blank diskettes used in this procedure again before<BR>
+you use them for recording files.<P>&nbsp;<P>
+
+
+<B>H/Z-207 Port Address</B><P>
+
+The H/Z-207 Floppy Disk Controller Card occupies a block of eight contiguous I/O port addresses beginning on an 8-bit boundary. The low-order six address bits in this block of eight ports are actually used.<P>
+
+The port address is selected by sections 3 through 7 of switch DS1 on the Card. Switch section 7 selects the most significant bit. Heath/Zenith Computers use port address B0 hex. Switch sections 0 and 1 are used to control bits 3 and 4 (with 0= least significant bit) of the status port, which can be read at I/O address BASE + 5.<P>
+
+<B>NOTES:</B><P>
+
+1. H/Z software uses switch section 0 for 48/96 tpi drive selection.<BR>
+2. Early distributions of Z-DOS v4 used sections 0 and 1 for specifying<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the 48/96 tpi drive mix. See Appendix I: User Configurations from<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;"<I>Z-100 LifeLine</I>" issue #79.<BR>
+3. Z-DOS v4.06 and later ignores switch sections 0 and 1.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;The mix of drives no longer matters to the operating system.<BR>
+4. Switch section 2 is not used.<P>
+
+<CENTER><IMG SRC="../images/Z207Cal02.jpg" BORDER="0"></CENTER><P>&nbsp;<P>
+
+
+<B>Other Configurable Options</B><P>
+
+Please refer to your Z-100 User's Manual to configure the following two items, if needed.<P>
+
+<B>Disk Controller Clock Speed</B><P>
+
+The H/Z-207 Floppy Disk Controller Card is configured to operate with a CPU that operates faster than 3 MHz. If the Disk Controller is to be used with a CPU that operates at 3 MHz or SLOWER, a minor modification must be made to the board at J1.<P>
+
+
+<B>Disk Controller VI Lines</B><P>
+
+The Vectored Interrupt lines (VI) are properly configured to operate in a H/Z-100 computer. If you will be using the Disk Controller with a different manufacturer's computer, you may need to configure the VI lines by installing jumper wires.<P>&nbsp;<P>
+
+
+<B>Constructing a Calibration Board</B><P>
+
+Pictorial 4 shows the circuit board that was constructed during assembly of the H-207 Floppy Disk Controller Board. A similar board can be constructed on a standard plug board.<P>
+
+The parts are easily found from spare H/Z-100 computer boards. DL501 and DL502 are the standard 200 ns Delay Line found on the Motherboard or Z-205 Memory Card. DL502 is optional and is only needed if you intend to use this circuit with drives that require more than 120 ns of write precompensation.<P>
+
+The only critical construction note is to make the wire connecting pin 1 of DL501 to pin 9 of U501 no less than 2" long.<P>
+
+Figure 1 shows the circuit schematic.<P>
+
+
+<A HREF="../images/Z207CalF1.jpg" target=_blank">
+<CENTER><IMG SRC="../images/Z207CalF1x.jpg" BORDER="0"></CENTER></A>
+<P>&nbsp;<P>
+
+
+<B>Heath Drive Calibration</B><P>
+
+<B>Caution:</B> The procedures given earlier use an oscilloscope and frequency counter, reportedly making them much more accurate and preferred over the following procedures, which can damage your controller card or even the computer if improperly used. The following procedures are only provided as an alternate method to be used if the special equipment used above is not available. <B>Well, since I wrote this many years ago, I've found that those boards that I used the oscilloscope on were having difficulty formatting drives. I've found that the resistor pots were turned just slightly too far clockwise - maybe my Heath computer scope isn't accurate enough! The circuit board and alternate calibration procedure picked up on this and I've since found that using the circuit board was actually the better procedure!</B><P>
+
+If a frequency counter is available, perform the voltage and frequency adjustment as outlined in the Data Separator Calibration section above. If the frequency counter is not available, perform the alternate Data Separator calibration procedures, next.<P>&nbsp;<P>
+
+
+<B>Alternate Data Separator Calibration</B><P>
+
+<B>Calibration Preparation:</B><P>
+
+1. Locate <B>R1 (FREQ)</B> on the Disk Controller board and turn it 30 (thirty)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;turns clockwise, or until you hear a clicking sound as you rotate the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;control shaft.<P>
+
+<B>CAUTION:</B> While the following procedures could be used without a spare<BR>
+socket, inserting wires into the board's IC sockets could severely damage<BR>
+the socket. Always use a spare socket.<P>
+
+<CENTER><IMG SRC="../images/Z207Cal03.jpg" BORDER="0"></CENTER><P>
+
+
+2. Locate a spare 40 pin IC socket and bend all of the pins inward under<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the socket except pins 20, 30, 33, and 37. These are the only pins that<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;will be used.<P>
+
+3. Remove U22, the FD1797 controller chip, and carefully set it safely aside.<P>
+
+4. Install the new 40 pin socket into the empty U22 socket, ensuring that<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;only the four pins, 20, 30, 33, and 37 are properly inserted into their<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;respective pin sockets.<P>
+
+Refer to Pictorial 3 for the following steps.<P>
+
+5. Cut a 1/2" bare wire. Then bend a loop in one end of the wire and<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;solder the wire in the <B>CAL</B> hole located between U20 and U14. Be sure<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the wire does not touch any other nearby foils or component leads.<P>
+
+6. Cut a 2-1/4" bare wire, bend 1/4" at each end, and insert the wire<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;into socket holes 20 and 37 at U22.<P>
+
+7. Push a length of bare wire into socket hole 33 of U22, solder it to<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the 2-1/4" bare wire already installed, and cut off any excess.<P>
+
+8. As before, push a bare wire into socket hole 30 of U22, solder it to<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the 2-1/4" bare wire, and cut off the excess wire.<P>
+
+9. Remove U9, 74LS241, from its socket and set it carefully aside.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Locate a spare 8, 14, 16, or 20 pin socket and install it into the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;vacant U9 socket, lining up the notched ends.<P>
+
+10. Install a 3/4" bare wire into socket holes 1 and 20 at U9.<P>
+
+11. Cut and install another 1/2" hooked bare wire at the <B>CAL</B> hole at<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the center and side of U9.<P>
+
+12. Remove U30, 74LS273, and set it aside.<P>
+
+The card is now prepared for the Alternate Data Separator Calibration procedures next.<P>&nbsp;<P>
+
+
+<B>Alternate Data Separator Calibration:</B><P>
+
+Refer to Pictorial 5 for the following steps.<P>
+
+1. Install the Z-207 Controller Card, less the three IC chips and<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;prepared as given above, into the computer and connect its cables.<P>
+
+2. Using a high impedance DC voltmeter (10M ohm or greater), select<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the voltage range that is most suitable for measuring a voltage that<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;is below 5 volts.<P>
+
+3. Connect the common (or negative) test lead to test point <B>"GND"</B>.<P>
+
+4. Connect the positive voltmeter lead to test point <B>"CP2"</B>.<P>
+
+<B>CAUTION:</B> When the all-in-one computer is turned on, high voltage is<BR>
+present at the video deflection circuit board and the CRT's anode.<BR>
+Be careful and do not contact these areas while the computer is turned on.<P>
+
+5. Plug in your computer and turn it on.<P>
+
+6. Adjust control R2 (BIAS) for a meter reading of 1.40 Vdc.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Switch to as low a range as possible to perform this adjustment.<P>
+
+7. Turn off the computer, unplug the cable, and remove the Controller Card.<P>
+
+8. Cut a 5" white wire, remove 1/4" of insulation from each end, and<BR>
+   temporarily solder the wire between the two wires in the <B>CAL</B> holes<BR>
+   on the component side of the circuit board.<P>
+
+9. Reinstall the circuit board into the computer and reconnect the<BR>
+   voltmeter to test points <B>GND</B> and <B>CP2</B>.<P>
+
+10. Turn on the computer.<P>
+
+<B>NOTE:</B> In the next step you will adjust the <B>R1 (FREQ)</B> control for a meter reading of 1.40 Vdc. It is normal for this voltage to start at about 1 volt. Then as you rotate the control counterclockwise, this voltage may gradually drop to near zero, and then jump to approximately 2 volts. Rotate this control backwards (clockwise) to locate the FIRST place where you can obtain 1.40 volts. If your initial voltage reading is greater than 1.4 volts, adjust the <B>R1 (FREQ)</B> control counterclockwise until you find the FIRST position at which you can obtain a 1.40 Vdc reading.<P>
+
+If you continue turning counterclockwise, you may find another point that will give a 1.40 Vdc reading. This second point is the wrong one; do not use it.<P>
+
+11. Adjust R1 (FREQ) counterclockwise for a meter reading of 1.40 Vdc<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-0.05 volts.<P>
+
+12. Place the top cover on the computer and allow it to operate for<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 minutes (to stabilize), then remove the cover and fine tune the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previous step.<P>
+
+13. Turn off the computer, unplug the cables and remove the Contoller Card.<P>
+
+14. Remove the 5" white wire from the component side of the Card.<P>
+
+15. Remove the top 40-pin IC socket from U22 and reinstall the FD1797<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller IC. Check that no pins turned under.<P>
+
+16. Reinstall U30, the 74LS273 IC.<P>
+
+17. Remove the top socket from U9 and reinstall U9, the 74LS241 IC.<P>
+
+Proceed with the Alternate Write Precomp Calibration procedures next.<P>
+
+
+<B>Alternate Write Precom Calibration:</B><P>
+
+1. Turn control R3 (PRECMP1) fully counterclockwise.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Turn R4 (PRECMP2) fully clockwise.<P>
+
+2. Connect the red wire coming from the calibration circuit board to<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the indicated lead of capacitor C27 on the Controller Card, push the<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;black wire connector onto the GND pin, and press the yellow wire<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;connector onto the CP3 pin.<P>
+
+3. Lay the calibration circuit board on the drive shelf as shown if you<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;have a low-profile computer, or position it away from your computer<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if you have the all-in-one version. Do not let the circuit board touch<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;any metal.<P>
+
+4. Install the Controller Card into any of the card cage slots and connect<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;the drive cables.<P>
+
+<B>CAUTION:</B> When the all-in-one computer is turned on, high voltage is<BR> present at the video deflection circuit board and the CRT's anode.<BR>
+Be careful and do not contact these areas while the computer is turned on.<P>
+
+5. Turn on the computer and boot up either Z-DOS or CP/M.<P>
+
+6. Locate a blank soft-sectored diskette and insert it into any disk drive.<P>
+
+7. Run FORMAT, and as the diskette is being formatted, adjust <B>R3 (PRECMP1)</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;on the Controller Card until the calibration board LED, D501, just lights<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;and glows steadily. When the FORMAT program stops, the LED will remain<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;latched "ON" as long as the adjustment was set between 120 ns and 160 ns<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;of write precompensation. Be sure the FORMAT routine is running while you<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;make any adjustment to the control.<P>
+
+8. Open the drive door, turn off the computer, remove the calibration<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;circuit board, and install the Controller Card in any convenient<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;card cage slot.<P>
+
+This completes the calibration of your Controller Card.<P>
+
+<B>NOTE:</B> Reformat all blank diskettes used during these procedures<BR>
+before you use them.<P>
+
+<CENTER><IMG SRC="../images/Z207Cal04.jpg" BORDER="0"></CENTER><P>
+
+<CENTER><IMG SRC="../images/Z207Cal05.jpg" BORDER="0"></CENTER><P>
+
+</FONT></TD></TR>
+
+</table>
+</td></tr>
+
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<img src="../images/bar.jpg" hspace="0" vspace="0" alt="--Divider--">
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<A HREF="mailto:z100lifeline@earthlink.net"> <img src="../images/email.jpg" HSPACE="0" VSPACE="0" BORDER="0"></A><P><A HREF="mailto:z100lifeline@earthlink.net"><FONT FACE="Verdana, Arial" SIZE="4">z100lifeline@earthlink.net</FONT></A>
+</td></tr>
+
+<tr><td>&nbsp;</td><td valign="middle" align="center">
+<P>
+<table>
+<tr><td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../index.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../index.html"> HOME Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../lifeline.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../lifeline.html"> LifeLine Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../z100.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../z100.html"> Z-100 Page</A>&nbsp;&nbsp;&nbsp;
+</FONT></td>
+
+<td align="center"><FONT FACE="Verdana, Arial" SIZE="3">
+<A HREF="../repair.html">
+<img src="../images/bullet.jpg" BORDER="0"></A>
+<A HREF="../repair.html"> Repair Page</A>
+</FONT></td>
+
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td>&nbsp;</td><td align=center><center>
+<table>
+<TR><TD VALIGN="top" ALIGN="center" WIDTH="370">
+<FONT SIZE="-2">
+Copyright &copy; 2009, Steven W. Vagts<BR>
+Revised -- December 15, 2009
+</FONT></TD>
+
+</TR>
+</TABLE>
+</center>
+</td></tr>
+</table>    
+</BODY></HTML>
